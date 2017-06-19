@@ -1,0 +1,7 @@
+@import url('base.css');
+
+/*if you just want to adjust the size of the stage and the thumbnails, you can do so by editing the following lines: */
+.pika-thumbs li{width: 60px; height:55px;list-style-type:none;margin: 5px;}
+.pika-thumbs li img{width: 60px;height:55px;}
+.pikachoose {width: 100%; margin: 0 auto;position:relative;float:left;}
+.pika-thumbs {margin: 11% 0 0 0;position: relative;float:right;width:220px;}

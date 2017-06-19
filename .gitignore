@@ -20,9 +20,10 @@ demos/
 extras/documentation
 
 # Public
-public
-#public/administracao/mkt
-#public/documentos
+public/administracao/mkt
+public/documentos
+public/idealize
+public/img
 #public/idealize/public/img/categoria
 #public/idealize/public/img/premiacao
 #public/idealize/public/img/regulamento
