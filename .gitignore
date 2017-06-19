@@ -22,18 +22,9 @@ extras/documentation
 # Public
 public/administracao/mkt
 public/documentos/arquivo
-public/img
-#public/img/banner
-#public/img/banner_principal
-#public/img/chamada
-#public/img/colecao
-#public/img/colecoes
-#public/img/legenda
-#public/img/linha
-#public/img/linhas
-#public/img/materia
-#public/img/midia
-#public/img/produto
-#public/img/produtos
-#public/img/texto
+public/img/banner
+public/img/linha
+public/img/linhas
+public/img/produto
+public/img/produtos
 
