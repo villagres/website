@@ -1,0 +1,229 @@
+<?php
+	foreach($this->dados as $dado){
+		$sessenta = $dado['sessenta'];
+		$cinquenta = $dado['cinquenta'];
+		$vinteequatro = $dado['vinteequatro'];
+		$vinteequatrot = $dado['vinteequatrot'];
+		$setentaeum = $dado['setentaeum'];
+		$vinteecinco = $dado['vinteecinco'];
+		$trinta = $dado['trinta'];
+		$sessentaedoist = $dado['sessentaedoist'];
+		$setentaeumt = $dado['setentaeumt'];
+		$quarentaenovet = $dado['quarentaenovet'];
+		$trintat = $dado['trintat'];
+		$trintaeum = $dado['trintaeum'];
+		$sessentaetres = $dado['sessentaetres'];
+		$datacadastro = $dado['data'];
+		$dataparticipacao = $dado['data2'];
+		$total = $sessenta + $cinquenta + $vinteequatro + $vinteequatrot + $setentaeum + $vinteecinco + $trinta + $sessentaedoist + $setentaeumt + $quarentaenovet + $trintat + $trintaeum + $sessentaetres;
+	}
+	if(!empty($dataparticipacao)){
+		$data = $dataparticipacao;
+	}
+	else{
+		$data = $datacadastro;
+	}
+?>
+<div class="conteudo2">
+	<div class="topo">
+		<img src="/idealize/public/img/topo.png" alt="Topo">
+	</div>
+	<div class="botoes2" style="display:none;">
+		<a href="" class="btnCampanha">CAMPANHA ATIVA<br><span>Viagem Internacional</span></a>
+		<p>Confira seu saldo de pontos abaixo</p>
+	</div>	
+	<div class="dadosUsuario"><span class="nomeUsu"><?php echo strtoupper($this->usuario);?></span><span class="empresaUsu" style="display:none;"><?php echo strtoupper($this->empresa) != strtoupper($this->usuario) ? $this->empresa : '';?></span></div>
+	<div class="totais"><span class="prazo">Período de Participação: <?php echo $data ." à ". date('d/m/Y', strtotime("+365 days",strtotime(str_replace('/','-',$data)))); ?></span></div>
+	<div class="totais"><span class="prazo">TOTAL PONTOS: <?php echo $total; ?></span></div>
+	<div class="tabelas">
+	<div class="tabela_saldo">
+		<h1>PONTOS CONQUISTADOS</h1>
+		<table class="tbl_saldo">						
+			<tr>
+				<td class="rotuloSaldo">24,5x100</td>
+				<td class="pontosSaldo"><?php if($vinteequatro != ''){echo $vinteequatro;}else{echo "0";} ?> pontos</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="rotuloSaldo">24,5x100 (Touch)</td>
+				<td class="pontosSaldo"><?php if($vinteequatrot != ''){echo $vinteequatrot;}else{echo "0";} ?> pontos</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="rotuloSaldo">25x25 (Santa)</td>
+				<td class="pontosSaldo"><?php if($vinteecinco != ''){echo $vinteecinco;}else{echo "0";} ?> pontos</td>
+				<td></td>
+			</tr>		
+			<tr>
+				<td class="rotuloSaldo">30x30</td>
+				<td class="pontosSaldo"><?php if($trinta != ''){echo $trinta;}else{echo "0";} ?> pontos</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="rotuloSaldo">30x107 (Touch)</td>
+				<td class="pontosSaldo"><?php if($trintat != ''){echo $trintat;}else{echo "0";} ?> pontos</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="rotuloSaldo">31x108</td>
+				<td class="pontosSaldo"><?php if($trintaeum != ''){echo $trintaeum;}else{echo "0";} ?> pontos</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="rotuloSaldo">49x99 (Touch)</td>
+				<td class="pontosSaldo"><?php if($quarentaenovet != ''){echo $quarentaenovet;}else{echo "0";} ?> pontos</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="rotuloSaldo">50x100</td>
+				<td class="pontosSaldo"><?php if($cinquenta != ''){echo $cinquenta;}else{echo "0";} ?> pontos</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="rotuloSaldo">60X60</td>
+				<td class="pontosSaldo"><?php if($sessenta != ''){echo $sessenta;}else{echo "0";} ?> pontos</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="rotuloSaldo">62x107 (Touch)</td>
+				<td class="pontosSaldo"><?php if($sessentaedoist != ''){echo $sessentaedoist;}else{echo "0";} ?> pontos</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="rotuloSaldo">63x108</td>
+				<td class="pontosSaldo"><?php if($sessentaetres != ''){echo $sessentaetres;}else{echo "0";} ?> pontos</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="rotuloSaldo">71x71 (Touch)</td>
+				<td class="pontosSaldo"><?php if($setentaeumt != ''){echo $setentaeumt;}else{echo "0";} ?> pontos</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="rotuloSaldo">71x71</td>
+				<td class="pontosSaldo"><?php if($setentaeum != ''){echo $setentaeum;}else{echo "0";} ?> pontos</td>
+				<td></td>
+			</tr>
+		</table>
+	</div>			
+	<div class="calculo" style="display:none;">
+		<h1>Tabela de Conversão de M² para Pontos</h1>
+		<table>
+			<tr>
+				<td class="esq">24,5x100</td>
+				<td class="dir">1m² = 2 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">24,5x100 (Touch)</td>
+				<td class="dir">1m² = 3 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">25x25 (Santa)</td>
+				<td class="dir">1m² = 3 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">30x30</td>
+				<td class="dir">1m² = 3 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">30x107 (Touch)</td>
+				<td class="dir">1m² = 3.5 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">31x108</td>
+				<td class="dir">1m² = 2 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">49x99 (Touch)</td>
+				<td class="dir">1m² = 3.5 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">50x100</td>
+				<td class="dir">1m² = 3 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">60x60</td>
+				<td class="dir">1m² = 2 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">62x107 (Touch)</td>
+				<td class="dir">1m² = 3.5 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">63x108</td>
+				<td class="dir">1m² = 3 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">71x71 (Touch)</td>
+				<td class="dir">1m² = 3.5 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">71x71</td>
+				<td class="dir">1m² = 3 pontos</td>
+			</tr>
+		</table>		
+	</div>		
+	</div>		
+	<div class="viagem">	
+		<h1>PREMIAÇÃO</h1>
+		<?php
+			if($total >= 4000){
+				$villa = "style='color:#00A859;'";
+			}
+			else{
+				$villa = "style='color:#606062;'";
+			}
+			if($total >= 6000){
+				$dpny = "style='color:#00A859;'";
+			}
+			else{
+				$dpny = "style='color:#606062;'";
+			}
+			if($total >= 8000){
+				$chile = "style='color:#00A859;'";
+			}
+			else{
+				$chile = "style='color:#606062;'";
+			}
+			if($total >= 12000){
+				$ny = "style='color:#00A859;'";
+			}
+			else{
+				$ny = "style='color:#606062;'";
+			}
+			if($total >= 18000){
+				$milao = "style='color:#00A859;'";
+			}
+			else{
+				$milao = "style='color:#606062;'";
+			}
+		?>
+		<?php
+		$new = explode('/',$this->dtCadastro);
+		$converted = $new[2].'-'.$new[1].'-'.$new[0];
+		$cadastro = new DateTime($converted);
+		$compara = new DateTime('2016-03-22');
+		?>
+		<?php
+			if(!empty($this->premiacoes)){
+				foreach($this->premiacoes as $premiacao){
+					if($total >= $premiacao['pontuacao']){
+						$color = "style='color:#00A859;'";
+					}
+					else{
+						$color = "style='color:#606062;'";	
+					}
+		?>					
+					<div class="cidade"><span class="fa fa-plane fa-3x" <?php echo $color; ?>></span>			
+						<img src="/idealize/public/img/premiacao/<?php echo $premiacao['imagem']; ?>" alt="Produtos Villagres">			
+					</div>			
+		<?php			
+				}
+			}
+		?>		
+	</div>
+	<div class="sair">
+		<a href="<?php echo $this->url('idealize-admin-logout')?>">SAIR</a>
+		<a href="<?php echo $this->url('home')?>">VOLTAR</a>
+	</div>
+</div>

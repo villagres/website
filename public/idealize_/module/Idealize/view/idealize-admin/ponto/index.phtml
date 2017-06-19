@@ -1,0 +1,41 @@
+<div class="conteudo2">
+	<div class="topo">
+		<img src="/idealize/public/img/topo.png" alt="Topo">
+	</div>
+	<div class="usuarios">
+		<h1>Cadastro dos Pontos</h1>
+		<p>
+			<a href="<?php echo $this->url('admin');?>">Voltar</a>
+			<a href="<?php echo $this->url('idealize-admin-ponto',array('controller'=>'pontos','action'=>'new')); ?>">Novo</a>
+			<a href="<?php echo $this->url('idealize-admin-pessoa',array('controller'=>'usuarios','action'=>'relatorioPontos')); ?>">Gerar relatório</a>
+		</p>
+		<table class="table table-bordered" id="tbl_users">
+			<tr>
+				<th class="rotulo">ID</th>
+				<th class="rotulo">Pontos</th>
+				<th class="rotulo">Formato</th>
+				<th class="rotulo">Data dos pontos</th>
+				<th class="rotulo">Pessoa</th>
+				<th colspan="2" class="rotulo">Ação</th>
+			</tr>
+			<?php foreach($this->data as $entity): ?>
+			<tr>
+				<td><?php echo $entity->getId(); ?></td>
+				<td><?php echo $entity->getPontos(); ?></td>
+				<td><?php echo $entity->getFormato(); ?></td>
+				<td><?php echo $entity->getDtPontos(); ?></td>
+				<td><?php echo $entity->getIdPessoa(); ?></td>
+				<td style="text-align:center;">
+					<a href="<?php echo $this->url('idealize-admin-interna',array('controller'=>'pontos','action'=>'edit','id'=>$entity->getId())); ?>">Editar</a>
+				</td>
+				<td style="text-align:center;">
+					<a href="<?php echo $this->url('idealize-admin-interna',array('controller'=>'pontos','action'=>'delete','id'=>$entity->getId())); ?>" style="background: #ff0000;color: #fff;border: 1px solid #ccc;">Deletar</a>
+				</td>
+			</tr>
+			<?php endforeach;?>
+
+		</table>
+		<br>
+		<?php echo $this->paginationControl($this->data,'Sliding','paginator'); ?>
+	</div>	
+</div>

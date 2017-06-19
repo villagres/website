@@ -1,0 +1,45 @@
+<div class="conteudo2">
+	<div class="topo">
+		<img src="../../img/topo.png" alt="Topo">
+	</div>
+	<div class="usuarios">
+		<h1>Cadastro de Nova Pessoa</h1>
+		<?php
+			$form = $this->form;
+			$form->setAttribute('action',$this->url('idealize-admin',array('controller'=>'usuarios','action'=>'new')));
+			$form->prepare();
+			echo $this->form()->openTag($form); 
+		?>
+		<table class="tabela-pessoa">
+			<tr>
+				<tr colspan="2"><?php echo $this->formHidden($form->get('id'));?></tr>
+			</tr>
+			<tr>
+				<td class="lbl">Nome:</td>
+				<td><?php echo $this->formRow($form->get('nome'));?></td>
+			</tr>
+			<tr>
+				<td class="lbl">Empresa:</td>
+				<td><?php echo $this->formRow($form->get('empresa'));?></td>
+			</tr>
+			<tr>
+				<td class="lbl">E-mail:</td>
+				<td><?php echo $this->formRow($form->get('email'));?></td>
+			</tr>
+			<tr>
+				<td class="lbl">Senha:</td>
+				<td><?php echo $this->formRow($form->get('senha'));?></td>
+			</tr>
+			<tr>
+				<td class="lbl">Administrador:</td>
+				<td><?php echo $this->formRow($form->get('administrador'));?></td>
+			</tr>
+			<tr>
+				<td colspan="2"><?php echo $this->formSubmit($form->get('submit'));?></td>				
+			</tr>			
+		</table>		
+		<?php			
+			echo $this->form()->closeTag();
+		?>		
+	</div>
+</div>

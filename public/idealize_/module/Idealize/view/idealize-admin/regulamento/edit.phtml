@@ -1,0 +1,50 @@
+<div class="conteudo2">
+	<div class="topo">
+		<img src="/idealize/public/img/topo.png" alt="Topo">
+	</div>
+	<div class="usuarios">
+		<h1>Alteração de regulamento</h1>
+		<?php
+			$form = $this->form;
+			$form->setAttribute('action',$this->url('idealize-admin-interna',array('controller'=>'regulamento','action'=>'edit')));
+			$form->prepare();
+			echo $this->form()->openTag($form);
+		?>
+		<table class="tabela-pessoa">
+			<tr>
+				<td colspan="2"><?php echo $this->formHidden($form->get('id')); ?></td>
+			</tr>
+			<tr>
+				<td class="lbl">Regulamento:</td>
+				<td><?php echo $this->formRow($form->get('regulamento')); ?></td>
+			</tr>
+			<tr>
+				<td class="lbl">Documento:</td>
+				<td><?php echo $this->formRow($form->get('documento')); ?></td>
+			</tr>
+			<?php 
+				$image = $this->form->getElements()['documento']->getValue();
+				if(!empty($image)){					
+			?>
+					<tr>
+						<td class="lbl">Documento Atual:</td>
+						<td style="padding: 10px 0;">
+							<object data="/idealize/public/img/regulamento/<?php echo $this->form->getElements()['documento']->getValue(); ?>" type="application/pdf" width="500" height="200">								
+							</object>
+						</td>						
+					</tr>			
+			<?php
+				}
+			?>
+			<tr>
+				<td colspan="2">
+					<a href="/idealize/public/admin/regulamento" class="btnVoltar">Voltar</a>
+					<?php echo $this->formSubmit($form->get('submit'));?>
+				</td>				
+			</tr>
+		</table>
+		<?php			
+			echo $this->form()->closeTag();
+		?>
+	</div>
+</div>

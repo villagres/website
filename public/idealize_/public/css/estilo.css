@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'BudHand';
+  src: url('../fonts/budhrg-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/budhrg-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/budhrg-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/budhrg-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/budhrg-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/budhrg-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/gotham-book-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/gotham-book-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/gotham-book-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/gotham-book-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/gotham-book-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/gotham-book-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+body{font-family: 'Gotham', arial, sans-serif;}
+nav{clear: both;height: 20px;background: #606062;}
+.navbar{clear: both;height: 20px;background: #606062;}
+.navbar-fixed-top{clear: both;height: 20px;}
+footer{width: 100%;background: #606062;height: 20px;margin: 0 auto;clear: both;}
+.imgHome{float: left;width: 65%;}
+.imgHome img{width: 100%;}
+.conteudo{float: right;width: 35%;font-family: 'Gotham';}
+.conteudo img{width: 100%;float: right;margin: 30px 30px 30px 0;}
+.conteudo p{width: 60%;text-align: right;float: right;margin-right: 35px;}
+.login{float: right;width: 65%;margin-top: 60px;background: #BDBFC1;margin-right: 35px;margin-bottom: 30px;}
+.login table{width: 100%;background: #BDBFC1;}
+.login table tr.titulo{text-align: center;background: #606062;color: #fff;height: 30px;}
+.login table tr{height: 20px;}
+.login table tr td{padding: 0 20px;}
+.login table tr td label{margin-top: 10px;}
+.login table tr td input[type="text"]{width: 100%;background: #E6E7E8;border: none;padding: 5px;}
+.login table tr td input[type="password"]{width: 100%;background: #E6E7E8;border: none;padding: 5px;}
+#btnEnvia{width: 100px;margin-bottom: 15px;width: 100%;background-color: #606062;color: #fff;border: none;height: 30px;}
+.login table tr td p{width: 100%;text-align: center;margin: 15px 0;color: #ff0000;}
+
+.conteudo2{margin:0 auto;width:100%;font-family: 'Gotham';padding:0;background:url('../img/background.png') fixed;height: 100%;min-height:1000px;overflow: auto;}
+.conteudo2 .topo{margin:0 auto;width:100%;}
+.conteudo2 .topo img{width:100%;}
+
+.conteudo2 p{float: left;width: 100%;margin: 0 auto;text-align: center;font-size: 15px;margin: 20px 0 20px 0;}
+
+.conteudo2 .menu{margin: 0 auto;text-align: center;width: 30%;border: 1px solid #E6E7E8;margin-top: 50px;min-height: 420px;background: #BDBFC1;height: auto;}
+.conteudo2 .menu h1{background: #606062;color: #fff;font-size: 18px;float: left;width: 100%;margin: 0;padding: 10px 0;font-family: 'Gotham';}
+.conteudo2 .menu a,.conteudo2 .menu a:hover,.conteudo2 .menu a:active,.conteudo2 .menu a:visited{text-decoration: none;color: #000;padding: 10px;width: 94.5%;background: #E6E7E8;float: left;margin-top: 20px;margin-left: 10px;margin-right: 10px;}
+
+.conteudo2 #tbl_users{width: 70%;margin: 0 auto;background: #BDBFC1;}
+.conteudo2 #tbl_users .rotulo{text-align: center;background: #606062;color: #fff;}
+.conteudo2 #tbl_users a{color: #606062;padding: 5px 10px;border: 1px solid #606062;text-align: center;text-decoration: none;}
+.conteudo2 .usuarios{padding-bottom: 20px;}
+.conteudo2 .usuarios h1{margin: 0 auto;font-size: 24px;font-family: 'Gotham';text-align: center;margin: 20px 0;}
+.conteudo2 .usuarios p{margin: 0 auto;text-align: center;margin: 30px 0;}
+.conteudo2 .usuarios p a{color: #606062;padding: 5px 10px;border: 1px solid #606062;text-align: center;text-decoration: none;}
+
+.conteudo2 .tabela-pessoa{margin: 0 auto;text-align: center;width: 50%;}
+.conteudo2 .tabela-pessoa input[type="text"]{background: #E6E7E8;padding: 5px;border: 1px solid #606062;width: 100%;margin-bottom: 10px;}
+.conteudo2 .tabela-pessoa select{background: #E6E7E8;padding: 5px;border: 1px solid #606062;width: 100%;margin-bottom: 10px;}
+.conteudo2 .tabela-pessoa .lbl{font-weight: bold;text-align: right;padding-right: 10px;}
+.conteudo2 .tabela-pessoa input[type="submit"]{width: 100px;margin-bottom: 15px;background-color: #606062;color: #fff;border: none;height: 30px;}
+.btnVoltar,.btnVoltar:hover,.btnVoltar:active,.btnVoltar:visited{width: 100px;margin-bottom: 15px;background-color: #606062;color: #fff;border: none;height: 30px;padding: 7px 20px;text-decoration: none;}
+
+.conteudo2 .botoes{margin: 0 auto;width: 100%;margin-top: 50px;}
+.conteudo2 .botoes .btnRegulamento{float: left;background: #606062;color: #fff;font-size: 18px;width: 30%;margin: 0;padding: 10px 0;font-family: 'Gotham';text-align: center;}
+
+.conteudo2 .calculo{float: right;width: 39%;margin: 0 auto;}
+.conteudo2 .calculo h1{float: left;width: 100%;font-size: 16px;font-family: 'Gotham';text-align: center;font-weight: bold;}
+.conteudo2 .calculo table{width: 100%;border: 1px solid #000;}
+.conteudo2 .calculo table tr{border: 1px solid #000;}
+.conteudo2 .calculo table tr td{padding: 5px 25px;}
+.conteudo2 .calculo table tr td.esq{font-weight: bold;}
+.conteudo2 .viagens{width: 100%;padding: 0 9%;margin: 0 auto;}
+.conteudo2 .viagens img{width: 60%;}
+
+.conteudo2 .regulamento{width: 100%;text-align: center;margin-top: 5px;padding-left: 100px;margin-bottom: 20px;}
+.conteudo2 .regulamento h1{float: left;width: 100%;font-size: 16px;font-family: 'Gotham';text-align: center;font-weight: bold;}
+.conteudo2 .regulamento h1 span{margin: 0 auto;padding: 0;}
+.conteudo2 .botoes .btnConsulta{float: right;background: #606062;color: #fff;font-size: 18px;width: 30%;margin: 0;padding: 10px 0;font-family: 'Gotham';text-align: center;}
+
+.conteudo2 .itemRegulamento{float: left;width: 30%;margin-left: 30px;}
+.conteudo2 .itemRegulamento h1{float: left;font-family: 'BudHand';color: #517689;font-size: 84px;}
+.conteudo2 .itemRegulamento span{float: right;font-size: 12px;width: 170px;text-align: left;margin-left: 20px;}
+
+.conteudo2 .btnCampanha{float: left;background: #606062;color: #fff;font-size: 18px;width: 30%;margin: 0;padding: 10px;font-family: 'Gotham';text-align: left;text-decoration: none;font-weight: bold;}
+.conteudo2 .btnCampanha span{font-size: 14px;font-weight: normal;}
+
+.conteudo2 .tabelas{width: 100%; float: left;padding: 0 5%;}
+.conteudo2 .tabelas .tabela_saldo{float: left;width: 50%;}
+.conteudo2 .tabelas .tabela_saldo h1{float: left;width: 100%;font-size: 16px;font-family: 'Gotham';text-align: left;font-weight: bold;}
+.conteudo2 .tbl_saldo{margin: 0 auto;width: 100%;text-align: center;border:1px solid #000;float: left;}
+.conteudo2 .tbl_saldo tr{border:1px solid #000;}
+.conteudo2 .tbl_saldo tr td{padding: 5px 0;}
+.conteudo2 .tbl_saldo tr td.rotuloSaldo{padding-left: 20px;text-align: left;font-weight: bold;width: 150px;}
+.conteudo2 .tbl_saldo tr td.pontosSaldo{width: 150px;text-align: right;padding-right: 20px;}
+
+.conteudo2 .dadosUsuario{margin: 0 auto;width: 90%;text-align: center;clear: both;padding: 0 20px;margin-top: 30px;}
+.conteudo2 .totais{margin: 0 auto;width: 90%;text-align: center;clear: both;padding: 0 20px;margin-bottom: 10px;margin-top: 30px;}
+.conteudo2 .nomeUsu{float: left;font-weight: bold;}
+.conteudo2 .empresaUsu{float: right;font-weight: bold;}
+.conteudo2 .prazo{float: left;font-weight: bold;}
+.conteudo2 .total{float: right;font-weight: bold;}
+
+.conteudo2 .viagem{float: left;width: 100%;padding:0 2.5%;}
+.conteudo2 .viagem h1{font-weight: bold;font-family: 'Gotham';font-size: 16px;text-align: center;}
+
+.conteudo2 .cidade{float: left;width: 17%;margin-left: 30px;}
+.conteudo2 .cidade img{width: 100%;margin-top: -30px;}
+
+.conteudo2 .fa-plane{
+	position: relative;
+	margin: 0 0 0 175px;	
+}
+
+.conteudo2 .sair{float: left;width: 40%;padding-left: 65px;padding-top: 50px;padding-bottom: 50px;}
+.conteudo2 .sair a{color: #606062;padding: 10px 20px;border: 1px solid #606062;text-align: center;text-decoration: none;}
+
+.conteudo2 .sair2{float: left;width: 40%;padding-left: 120px;margin-top: 40px;padding-bottom: 50px;}
+.conteudo2 .sair2 a{color: #606062;padding: 10px 20px;border: 1px solid #606062;text-align: center;text-decoration: none;}

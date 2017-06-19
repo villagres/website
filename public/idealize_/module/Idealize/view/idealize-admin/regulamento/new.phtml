@@ -1,0 +1,36 @@
+<div class="conteudo2">
+	<div class="topo">
+		<img src="/idealize/public/img/topo.png" alt="Topo">
+	</div>
+	<div class="usuarios">
+		<h1>Cadastro de novo regulamento</h1>
+		<?php
+			$form = $this->form;
+			$form->setAttribute('action',$this->url('idealize-admin-regulamento',array('controller'=>'regulamento','action'=>'new')));
+			$form->prepare();
+			echo $this->form()->openTag($form);
+		?>
+		<table class="tabela-pessoa">
+			<tr>
+				<td colspan="2"><?php echo $this->formHidden($form->get('id')); ?></td>
+			</tr>
+			<tr>
+				<td class="lbl">Regulamento:</td>
+				<td><?php echo $this->formRow($form->get('regulamento')); ?></td>
+			</tr>
+			<tr>
+				<td class="lbl">Documento:</td>
+				<td><?php echo $this->formRow($form->get('documento')); ?></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<a href="/idealize/public/admin/regulamento" class="btnVoltar">Voltar</a>
+					<?php echo $this->formSubmit($form->get('submit'));?>
+				</td>				
+			</tr>
+		</table>
+		<?php			
+			echo $this->form()->closeTag();
+		?>
+	</div>
+</div>

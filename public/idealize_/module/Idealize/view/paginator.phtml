@@ -1,0 +1,26 @@
+<?php
+	$urlPattern = $_SERVER['REQUEST_URI'];
+	$formatUrl = function($page) use ($urlPattern){
+					if(!preg_match('/page/',$urlPattern))
+						return $urlPattern . "/page/" . $page;
+					else
+						return preg_replace('/\d/', $page, $urlPattern);
+				};
+	$url = explode("page/",$urlPattern);
+	if(substr($url['0'], -1) != "/"){
+		$url['0'] = $url['0']."/";
+	}
+?>
+<center>
+<?php if($this->pageCount): ?>
+	<ul class = "pagination">	  
+	   <?php	   		
+			for($i=1; $i <= $this->pageCount; $i++){
+		?>
+				<li><a href = "<?php echo $url['0'].'page/'.$i; ?>"><?php echo $i;?></a></li>
+		<?php
+			}			
+	   ?>			   	   	   
+	</ul>	
+<?php endif; ?>
+</center>

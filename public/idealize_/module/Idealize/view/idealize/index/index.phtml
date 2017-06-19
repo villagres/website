@@ -1,0 +1,121 @@
+<div class="conteudo2">
+	<div class="topo">		
+		<img src="/idealize/public/img/topo.png" alt="Topo">
+	</div>
+	<div class="botoes">
+		<?php
+		$new = explode('/',$this->dtCadastro);
+		$converted = $new[2].'-'.$new[1].'-'.$new[0];
+		$cadastro = new DateTime($converted);
+		$compara = new DateTime('2016-03-22');
+		?>		
+		<ul style="text-align:center;margin:0 auto;list-style-type:none;width:88%;padding:0;">
+			<li style="display:inline;">
+				<?php if($this->imagemRegulamento !=  '') {?>
+					<a href="/idealize/public/img/regulamento/<?php echo $this->imagemRegulamento; ?>" target="_new" class="btnRegulamento">Regulamento IDealize</a>		
+				<?php }else{ ?>
+					<a class="btnRegulamento">Regulamento IDealize</a>		
+				<?php } ?>								
+			</li>
+			<li style="display:inline;">
+				<?php if($this->imagemCategoria != ''){ ?>
+					<img src="/idealize/public/img/categoria/<?php echo $this->imagemCategoria; ?>" alt="Categoria" style="width:30%;">
+				<?php } ?>
+			</li>
+			<li style="display:inline;">
+				<a href="/idealize/public/pontuacao" class="btnConsulta">Consulte sua pontuação</a>
+			</li>
+		</ul>
+	</div>	
+	<?php if($cadastro > $compara){?>
+	<p>A cada metro quadrado vendido, ganhe pontos e acumule para trocar por prêmios.</p>	
+	<?php }else{ ?>
+	<p>A cada metro quadrado vendido, ganhe pontos e acumule para trocar por prêmios.</p>
+	<?php } ?>	
+	<div class="regulamento">
+		<h1>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		&nbsp;&nbsp;Regulamento&nbsp;&nbsp;
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		</h1>
+		<div class="itemRegulamento">
+			<table>
+				<tr>
+					<td><h1>1</h1></td>
+					<td><span>VISITA A FÁBRICA VILLAGRES</span></td>
+				</tr>
+			</table>						
+		</div>
+		<div class="itemRegulamento">
+			<table>
+				<tr>
+					<td><h1>2</h1></td>
+					<td><span>RECEBIMENTO DE E-MAIL COM PERÍODO DE PARTICIPAÇÃO</span></td>
+				</tr>
+			</table>
+		</div>
+		<div class="itemRegulamento">
+			<table>
+				<tr>
+					<td><h1>3</h1></td>
+					<td><span>ESPECIFIQUE PRODUTOS VILLAGRES NAS LOJAS PARCEIRAS</span></td>
+				</tr>
+			</table>
+		</div>
+		<div class="itemRegulamento">
+			<table>
+				<tr>
+					<td><h1>4</h1></td>
+					<td><span>JUNTE PONTOS NOS ENVIANDO CÓPIA DAS NOTAS FISCAIS</span></td>
+				</tr>
+			</table>
+		</div>
+		<div class="itemRegulamento">
+			<table>
+				<tr>
+					<td><h1>5</h1></td>
+					<td><span>ACUMULE PONTOS</span></td>
+				</tr>
+			</table>
+		</div>
+		<div class="itemRegulamento">
+			<table>
+				<tr>
+					<td><h1>6</h1></td>
+					<td><span>BOA VIAGEM</span></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="viagens">
+		<div class="topo_viagens" style="width: 100%; text-align: center; margin-top:3%;">
+			<img src="/idealize/public/img/topo_viagens.png">
+		</div>
+		<div class="corpo_viagens" style="width: 100%; text-align: center;">
+			<?php			
+			if(!empty($this->premiacoes)){
+				foreach($this->premiacoes as $premiacao){
+			?>
+					<img src="/idealize/public/img/premiacao/<?php echo $premiacao['imagem']; ?>" style="width:20%;margin:0 1.5%;">
+			<?php
+				}
+			}
+			?>	
+		</div>
+		<div class="footer_viagens">
+			<img src="/idealize/public/img/footer_viagens.png">
+		</div>			
+
+	</div>
+	<div class="sair2"><a href="<?php echo $this->url('idealize-admin-logout')?>">SAIR</a></div>
+</div>

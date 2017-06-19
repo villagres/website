@@ -1,0 +1,52 @@
+<div class="conteudo2">
+	<div class="topo">
+		<img src="/idealize/public/img/topo.png" alt="Topo">
+	</div>
+	<div class="usuarios">
+		<h1>Cadastro de Pontos</h1>
+		<?php
+			$form = $this->form;
+			$form->setAttribute('action',$this->url('idealize-admin-ponto',array('controller'=>'pontos','action'=>'new')));
+			$form->prepare();
+			echo $this->form()->openTag($form); 
+		?>
+		<table class="tabela-pessoa">
+			<tr>
+				<tr colspan="2"><?php echo $this->formHidden($form->get('id'));?></tr>
+			</tr>
+			<tr>
+				<td class="lbl">Pontos:</td>
+				<td><?php echo $this->formElement($form->get('ponto'));?></td>
+			</tr>
+			<tr>
+				<td class="lbl">Formato:</td>
+				<td><?php echo $this->formElement($form->get('formato'));?></td>
+			</tr>
+			<tr>
+				<td class="lbl">M²:</td>
+				<td><?php echo $this->formElement($form->get('metragem'));?></td>
+			</tr>
+			<tr>
+				<td class="lbl">Profissional:</td>
+				<td><?php echo $this->formElement($form->get('pessoa'));?></td>
+			</tr>
+			<tr>
+				<td class="lbl">Loja Parceira:</td>
+				<td><?php echo $this->formElement($form->get('lojaparceira'));?></td>
+			</tr>
+			<tr>
+				<td class="lbl">Data:</td>
+				<td><?php echo $this->formElement($form->get('dataponto')->setValue(date('d/m/Y')));?></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<a href="/idealize/public/admin/pontos" class="btnVoltar">Voltar</a>
+					<?php echo $this->formSubmit($form->get('submit'));?>
+				</td>				
+			</tr>			
+		</table>		
+		<?php			
+			echo $this->form()->closeTag();
+		?>		
+	</div>
+</div>

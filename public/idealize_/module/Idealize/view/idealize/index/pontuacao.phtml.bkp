@@ -1,0 +1,127 @@
+﻿<div class="conteudo2">
+	<div class="topo">
+		<img src="/idealize/public/img/topo.png" alt="Topo">
+	</div>
+	<div class="botoes2">
+		<a href="" class="btnCampanha">CAMPANHA ATIVA<br><span>Viagem Internacional</span></a>
+		<p>Confira seu saldo de pontos abaixo</p>
+	</div>	
+	<div class="dadosUsuario"><span class="nomeUsu"><?php echo strtoupper($this->usuario)."-".$this->dtCadastro;?></span><span class="empresaUsu"><?php echo $this->empresa;?></span></div>
+	<table class="tbl_saldo">		
+		<?php
+			foreach($this->dados as $dado){
+				$sessenta = $dado['sessenta'];
+				$cinquenta = $dado['cinquenta'];
+				$vinteequatro = $dado['vinteequatro'];
+				$vinteequatrot = $dado['vinteequatrot'];
+				$setentaeum = $dado['setentaeum'];
+				$vinteecinco = $dado['vinteecinco'];
+				$trinta = $dado['trinta'];
+				$sessentaedoist = $dado['sessentaedoist'];
+				$setentaeumt = $dado['setentaeumt'];
+				$quarentaenovet = $dado['quarentaenovet'];
+				$trintat = $dado['trintat'];
+				$trintaeum = $dado['trintaeum'];
+				$sessentaetres = $dado['sessentaetres'];
+				$data = $dado['data'];
+				$total = $sessenta + $cinquenta + $vinteequatro + $vinteequatrot + $setentaeum + $vinteecinco + $trinta;
+			}
+		?>
+		<tr>
+			<td class="rotuloSaldo">24,5x100</td>
+			<td class="pontosSaldo"><?php if($vinteequatro != ''){echo $vinteequatro;}else{echo "0";} ?> pontos</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="rotuloSaldo">24,5x100 (Touch)</td>
+			<td class="pontosSaldo"><?php if($vinteequatrot != ''){echo $vinteequatrot;}else{echo "0";} ?> pontos</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="rotuloSaldo">25x25 (Santa)</td>
+			<td class="pontosSaldo"><?php if($vinteecinco != ''){echo $vinteecinco;}else{echo "0";} ?> pontos</td>
+			<td></td>
+		</tr>		
+		<tr>
+			<td class="rotuloSaldo">30x30</td>
+			<td class="pontosSaldo"><?php if($trinta != ''){echo $trinta;}else{echo "0";} ?> pontos</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="rotuloSaldo">30x107 (Touch)</td>
+			<td class="pontosSaldo"><?php if($trintat != ''){echo $trintat;}else{echo "0";} ?> pontos</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="rotuloSaldo">31x108</td>
+			<td class="pontosSaldo"><?php if($trintaeum != ''){echo $trintaeum;}else{echo "0";} ?> pontos</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="rotuloSaldo">49x99 (Touch)</td>
+			<td class="pontosSaldo"><?php if($quarentaenovet != ''){echo $quarentaenovet;}else{echo "0";} ?> pontos</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="rotuloSaldo">50x100</td>
+			<td class="pontosSaldo"><?php if($cinquenta != ''){echo $cinquenta;}else{echo "0";} ?> pontos</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="rotuloSaldo">60X60</td>
+			<td class="pontosSaldo"><?php if($sessenta != ''){echo $sessenta;}else{echo "0";} ?> pontos</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="rotuloSaldo">62x107 (Touch)</td>
+			<td class="pontosSaldo"><?php if($sessentaedoist != ''){echo $sessentaedoist;}else{echo "0";} ?> pontos</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="rotuloSaldo">63x108</td>
+			<td class="pontosSaldo"><?php if($sessentaetres != ''){echo $sessentaetres;}else{echo "0";} ?> pontos</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="rotuloSaldo">71x71 (Touch)</td>
+			<td class="pontosSaldo"><?php if($setentaeumt != ''){echo $setentaeumt;}else{echo "0";} ?> pontos</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="rotuloSaldo">71x71</td>
+			<td class="pontosSaldo"><?php if($setentaeum != ''){echo $setentaeum;}else{echo "0";} ?> pontos</td>
+			<td></td>
+		</tr>
+	</table>
+	<div class="totais"><span class="prazo">Período de Participação: <?php echo $data ." à ". date('d/m/Y', strtotime("+365 days",strtotime(str_replace('/','-',$data)))); ?></span><span class="total">TOTAL PONTOS: <?php echo $total; ?></span></div>
+	<div class="sair">
+		<a href="<?php echo $this->url('idealize-admin-logout')?>">SAIR</a>
+		<a href="<?php echo $this->url('home')?>">VOLTAR</a>
+	</div>
+	<div class="viagem">	
+		<h1>VIAGENS</h1>
+		<?php
+			if($total >= 8000){
+				$chile = "style='color:#00A859;'";
+			}
+			else{
+				$chile = "style='color:#606062;'";
+			}
+			if($total >= 12000){
+				$ny = "style='color:#00A859;'";
+			}
+			else{
+				$ny = "style='color:#606062;'";
+			}
+			if($total >= 18000){
+				$milao = "style='color:#00A859;'";
+			}
+			else{
+				$milao = "style='color:#606062;'";
+			}
+		?>
+		<div class="cidade"><span class="fa fa-plane fa-3x" <?php echo $chile;?>></span><img src="/idealize/public/img/chile.png" alt="Chile"></div>
+		<div class="cidade"><span class="fa fa-plane fa-3x" <?php echo $ny;?>></span><img src="/idealize/public/img/ny.png" alt="NY"></div>
+		<div class="cidade"><span class="fa fa-plane fa-3x" <?php echo $milao;?>></span><img src="/idealize/public/img/milao.png" alt="Milao"></div>
+	</div>
+</div>

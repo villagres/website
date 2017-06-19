@@ -1,0 +1,46 @@
+<div class="principal">
+	<div class="imgHome">
+		<img src="img/img_home.png" alt="Home">
+	</div>
+	<div class="conteudo">
+		<img src="img/logo_idealize.png" alt="Idealize">
+		<p>Programa de Relacionamento com Formadores de Opinião</p>
+		<div class="login">
+			<?php
+
+			$form = $this->form;	
+			$form->setAttribute('action',$this->url('idealize-admin-auth'));
+			$form->prepare();
+			echo $this->form()->openTag($form);											
+			?>			
+			<table>
+				<tr class="titulo">
+					<td>LOGIN - PARTICIPANTE</td>
+				</tr>
+				<tr>
+					<td><label>EMAIL</label></td>
+				</tr>
+				<tr>
+					<td><?php echo $this->formRow($form->get('email')); ?></td>
+				</tr>
+				<tr>
+					<td><label>SENHA</label></td>
+				</tr>				
+				<tr>
+					<td><?php echo $this->formRow($form->get('password'));?></td>
+				</tr>
+				<tr>
+					<td>						
+						<?php if($this->error): ?>
+							<p><b>Email ou senha inválidos</b></p>
+						<?php endif;?>		
+					</td>
+				</tr>
+				<tr>
+					<td><?php echo $this->formSubmit($form->get('submit'));?></td>
+				</tr>
+			</table>
+			<?php echo $this->form()->closeTag(); ?>
+		</div>
+	</div>
+</div>

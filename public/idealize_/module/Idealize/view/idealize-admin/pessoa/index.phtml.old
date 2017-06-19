@@ -1,0 +1,37 @@
+<div class="conteudo2">
+	<div class="topo">
+		<img src="../img/topo.png" alt="Topo">
+	</div>
+	<div class="usuarios">
+		<h1>Cadastro de usuários</h1>
+		<p><a href="<?php echo $this->url('idealize-admin',array('controller'=>'usuarios','action'=>'new')); ?>">Novo Usuário</a></p>	
+		<table class="table table-bordered" id="tbl_users">
+			<tr>
+				<th class="rotulo">ID</th>
+				<th class="rotulo">Nome</th>
+				<th class="rotulo">Empresa</th>
+				<th class="rotulo">E-mail</th>
+				<th class="rotulo">Senha</th>
+				<th colspan="2" class="rotulo">Ação</th>
+			</tr>
+			<?php foreach($this->data as $entity): ?>
+			<tr>
+				<td><?php echo $entity->getId(); ?></td>
+				<td><?php echo $entity->getNome(); ?></td>
+				<td><?php echo $entity->getEmpresa(); ?></td>
+				<td><?php echo $entity->getEmail(); ?></td>
+				<td><?php echo $entity->getSenha(); ?></td>
+				<td style="text-align:center;">
+					<a href="<?php echo $this->url('idealize-admin-interna',array('controller'=>'usuarios','action'=>'edit','id'=>$entity->getId())); ?>">Editar</a>
+				</td>
+				<td style="text-align:center;">
+					<a href="<?php echo $this->url('idealize-admin-interna',array('controller'=>'usuarios','action'=>'delete','id'=>$entity->getId())); ?>">Deletar</a>
+				</td>
+			</tr>
+			<?php endforeach;?>
+
+		</table>
+		<br>
+		<?php echo $this->paginationControl($this->data,'Sliding','paginator'); ?>
+	</div>	
+</div>

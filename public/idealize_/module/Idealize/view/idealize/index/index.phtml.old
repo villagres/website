@@ -1,0 +1,100 @@
+﻿<div class="conteudo2">
+	<div class="topo">
+		<img src="img/topo.png" alt="Topo">
+	</div>
+	<div class="botoes"><a href="regulamento.pdf" target="_new" class="btnRegulamento">Regulamento Idealize</a><a href="/idealize/public/pontuacao" class="btnConsulta">Consulte sua pontuação</a></div>
+	<p>A cada metro quadrado vendido, ganhe pontos e acumule para trocar por viagens.</p>
+	<div class="calculo">
+		<h1>CÁLCULO DA PONTUAÇÃO</h1>
+		<table>
+			<tr>
+				<td class="esq">60x60</td>
+				<td class="dir">1m² = 2 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">50x100</td>
+				<td class="dir">1m² = 2 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">24,5x100</td>
+				<td class="dir">1m² = 2 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">71x71</td>
+				<td class="dir">1m² = 3 pontos</td>
+			</tr>
+			<tr>
+				<td class="esq">25x25 (Santa)</td>
+				<td class="dir">1m² = 3 pontos</td>
+			</tr>
+		</table>		
+	</div>
+	<div class="viagens">
+		<img src="img/viagens.png" alt="Viagens">
+	</div>
+	<div class="regulamento">
+		<h1>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		&nbsp;&nbsp;Regulamento&nbsp;&nbsp;
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		<span class="glyphicon glyphicon-play"></span>
+		</h1>
+		<div class="itemRegulamento">
+			<table>
+				<tr>
+					<td><h1>1</h1></td>
+					<td><span>VISITA A FÁBRICA VILLAGRES</span></td>
+				</tr>
+			</table>						
+		</div>
+		<div class="itemRegulamento">
+			<table>
+				<tr>
+					<td><h1>2</h1></td>
+					<td><span>RECEBIMENTO DE E-MAIL COM PERÍODO DE PARTICIPAÇÃO</span></td>
+				</tr>
+			</table>
+		</div>
+		<div class="itemRegulamento">
+			<table>
+				<tr>
+					<td><h1>3</h1></td>
+					<td><span>ESPECIFIQUE PRODUTOS VILLAGRES NAS LOJAS PARCEIRAS</span></td>
+				</tr>
+			</table>
+		</div>
+		<div class="itemRegulamento">
+			<table>
+				<tr>
+					<td><h1>4</h1></td>
+					<td><span>JUNTE PONTOS NOS ENVIANDO CÓPIA DAS NOTAS FISCAIS</span></td>
+				</tr>
+			</table>
+		</div>
+		<div class="itemRegulamento">
+			<table>
+				<tr>
+					<td><h1>5</h1></td>
+					<td><span>ACUMULE PONTOS</span></td>
+				</tr>
+			</table>
+		</div>
+		<div class="itemRegulamento">
+			<table>
+				<tr>
+					<td><h1>6</h1></td>
+					<td><span>BOA VIAGEM</span></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

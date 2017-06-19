@@ -1,0 +1,31 @@
+<div class="conteudo2">
+	<div class="topo"><img src="/idealize/public/img/topo.png" alt="Topo"></div>
+	<div class="usuarios">
+		<h1>Cadastro de premiação</h1>
+		<p>
+			<a href="<?php echo $this->url('admin');?>">Voltar</a>
+			<a href="<?php echo $this->url('idealize-admin-premiacao',array('controller'=>'premiacao','action'=>'new')); ?>">Nova Premiação</a>			
+		</p>
+		<table class="table table-bordered" id="tbl_users">
+			<tr>
+				<th class="rotulo">ID</th>
+				<th class="rotulo">Descrição</th>				
+				<th colspan="2" class="rotulo">Ação</th>
+			</tr>
+			<?php foreach($this->data as $entity): ?>
+			<tr>
+				<td><?php echo $entity->getId(); ?></td>
+				<td><?php echo $entity->getDescricao(); ?></td>				
+				<td style="text-align:center;">
+					<a href="<?php echo $this->url('idealize-admin-interna',array('controller'=>'premiacao','action'=>'edit','id'=>$entity->getId())); ?>">Editar</a>
+				</td>
+				<td style="text-align:center;">
+					<a href="<?php echo $this->url('idealize-admin-interna',array('controller'=>'premiacao','action'=>'delete','id'=>$entity->getId())); ?>" style="background: #ff0000;color: #fff;border: 1px solid #ccc;">Deletar</a>
+				</td>
+			</tr>
+			<?php endforeach;?>
+		</table>
+		<br>
+		<?php echo $this->paginationControl($this->data,'Sliding','paginator'); ?>
+	</div>
+</div>
