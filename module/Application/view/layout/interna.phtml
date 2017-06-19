@@ -1,0 +1,1877 @@
+<?php echo $this->doctype(); ?>
+
+<?php	
+	$idioma = $this->translate('Idioma');
+	//$idioma = (isset($_SESSION['lang']) && !empty($_SESSION['lang'])) ? $_SESSION['lang'] : 'ptbr'; 	
+	
+	function multiLanguage($language){
+		$value = '';
+		switch($language){			
+			case 'enus': $value = '_en'; break;
+			default: $value = ''; break;
+		}
+		return $value;
+	}
+	
+	$language = multiLanguage($idioma);
+?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle(utf8_encode('Cerâmica Villagres'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath('css/style.css'))
+                        ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+                        ->prependStylesheet($this->basePath('css/bootstrap.css'))
+                        ->prependStylesheet($this->basePath('css/estiloInterna.css'))
+                        ->prependStylesheet($this->basePath('css/diapoInt.css'))
+                        ->prependStylesheet($this->basePath('css/right-without.css'))
+                        ->prependStylesheet($this->basePath('css/pgwslider.css'))
+                        
+        ?>
+
+        <!-- Scripts -->        
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-1.7.2.min.js'))                                              
+            ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath('js/html5shiv.js'),   'text/javascript', array('conditional' => 'lt IE 9',))           
+        ; ?>
+        <!--[if !IE]><!--><script type='text/javascript' src='/js/jquery.mobile-1.0rc2.customized.min.js'></script><!--<![endif]-->        	
+			<script type='text/javascript' src='/js/jquery.easing.1.3.js'></script> 
+			<script type='text/javascript' src='/js/jquery.hoverIntent.minified.js'></script> 
+			<script type='text/javascript' src='/js/diapo.js'></script>
+			<script type="text/javascript" src="/js/fadeSlideShow.js"></script>
+			<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+			<script type="text/javascript" src="/js/jquery.pikachoose.min.js"></script>
+			<script type="text/javascript" src="/js/jquery.touchwipe.min.js"></script>
+			<script type="text/javascript" src="/js/jquery.cycle.all.js"></script>
+			<script type="text/javascript" src="/js/pgwslider.js"></script>
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js" ></script>
+		 	<script type="text/javascript">
+				$(function(){
+					$('.pix_diapo').diapo();
+				});		
+			</script>				 	
+			<script type="text/javascript">
+				jQuery(document).ready(function(){
+					jQuery('#slideshow').fadeSlideShow({
+				        width: 533,
+				        height: 440,				       
+				        interval: 5000				        
+				    });
+				});		
+			</script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					   $('#slider1').cycle({
+					   fx: 'fade', // Here you can change the effect
+					   speed: 'slow', 
+					   timeout: 0,
+					   next: '#next', 
+					   prev: '#prev',
+					   pager: '#thumb',
+					   pagerAnchorBuilder: function(idx, slide) { 
+					     return '<li><a href="#"><img src="' + slide.src + '" /></a></li>'; 
+					   } 
+					  });
+					});	
+			</script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					   $('#slider2').cycle({
+					   fx: 'fade', // Here you can change the effect
+					   speed: 'slow', 
+					   timeout: 0,
+					   next: '#next', 
+					   prev: '#prev',
+					   pager: '#thumb2',
+					   pagerAnchorBuilder: function(idx, slide) { 
+					     return '<li><a href="#"><img src="' + slide.src + '" /></a></li>'; 
+					   } 
+					  });
+					});	
+			</script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					   $('#slider3').cycle({
+					   fx: 'fade', // Here you can change the effect
+					   speed: 'slow', 
+					   timeout: 0,
+					   next: '#next', 
+					   prev: '#prev',
+					   pager: '#thumb3',
+					   pagerAnchorBuilder: function(idx, slide) { 
+					     return '<li><a href="#"><img src="' + slide.src + '" /></a></li>'; 
+					   } 
+					  });
+					});	
+			</script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#9d928e"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"block"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});			
+				});
+			</script>				
+			<script type="text/javascript">
+				jQuery(function($){
+			    	$('#BR-RJ').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#9d928e"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"block"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-AC').click(function(){
+			    		$('#BR-AC').css({fill:"#9d928e"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"block"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-AL').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#9d928e"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"block"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-AP').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#9d928e"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"block"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-AM').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#9d928e"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"block"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-BA').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#9d928e"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"block"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-CE').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#9d928e"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"block"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-DF').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#9d928e"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"block"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-ES').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#9d928e"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"block"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-GO').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#9d928e"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"block"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-MA').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#9d928e"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"block"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-MT').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#9d928e"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"block"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-MS').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#9d928e"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"block"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-MG').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#9d928e"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"block"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-PA').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#9d928e"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"block"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-PB').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#9d928e"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"block"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-PR').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#9d928e"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"block"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-PE').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#9d928e"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"block"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-PI').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#9d928e"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"block"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-RN').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#9d928e"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"block"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-RS').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#9d928e"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"block"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-RO').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#9d928e"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"block"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-RR').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#9d928e"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"block"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-SC').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#9d928e"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"block"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-SP').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#9d928e"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"block"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-SE').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#9d928e"});
+			    		$('#BR-TO').css({fill:"#c4b5b0"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"block"});
+			        	$(".unidadesTO").css({display:"none"});
+			    	});
+			    	$('#BR-TO').click(function(){
+			    		$('#BR-AC').css({fill:"#c4b5b0"});
+			    		$('#BR-AL').css({fill:"#c4b5b0"});
+			    		$('#BR-AP').css({fill:"#c4b5b0"});
+			    		$('#BR-AM').css({fill:"#c4b5b0"});
+			    		$('#BR-BA').css({fill:"#c4b5b0"});
+			    		$('#BR-CE').css({fill:"#c4b5b0"});
+			    		$('#BR-DF').css({fill:"#c4b5b0"});
+			    		$('#BR-ES').css({fill:"#c4b5b0"});
+			    		$('#BR-GO').css({fill:"#c4b5b0"});
+			    		$('#BR-MA').css({fill:"#c4b5b0"});
+			    		$('#BR-MT').css({fill:"#c4b5b0"});
+			    		$('#BR-MS').css({fill:"#c4b5b0"});
+			    		$('#BR-MG').css({fill:"#c4b5b0"});
+			    		$('#BR-PA').css({fill:"#c4b5b0"});
+			    		$('#BR-PB').css({fill:"#c4b5b0"});
+			    		$('#BR-PR').css({fill:"#c4b5b0"});
+			    		$('#BR-PE').css({fill:"#c4b5b0"});
+			    		$('#BR-PI').css({fill:"#c4b5b0"});
+			    		$('#BR-RJ').css({fill:"#c4b5b0"});
+			    		$('#BR-RN').css({fill:"#c4b5b0"});
+			    		$('#BR-RS').css({fill:"#c4b5b0"});
+			    		$('#BR-RO').css({fill:"#c4b5b0"});
+			    		$('#BR-RR').css({fill:"#c4b5b0"});
+			    		$('#BR-SC').css({fill:"#c4b5b0"});
+			    		$('#BR-SP').css({fill:"#c4b5b0"});
+			    		$('#BR-SE').css({fill:"#c4b5b0"});
+			    		$('#BR-TO').css({fill:"#9d928e"});
+			    		
+			    		$(".unidadesAC").css({display:"none"});
+			    		$(".unidadesAL").css({display:"none"});
+			        	$(".unidadesAP").css({display:"none"});
+			        	$(".unidadesAM").css({display:"none"});
+			        	$(".unidadesBA").css({display:"none"});	
+			        	$(".unidadesCE").css({display:"none"});
+			        	$(".unidadesDF").css({display:"none"});
+			        	$(".unidadesES").css({display:"none"});
+			        	$(".unidadesGO").css({display:"none"});
+			        	$(".unidadesMA").css({display:"none"});
+			        	$(".unidadesMT").css({display:"none"});
+			        	$(".unidadesMS").css({display:"none"});
+			        	$(".unidadesMG").css({display:"none"});
+			        	$(".unidadesPA").css({display:"none"});
+			        	$(".unidadesPB").css({display:"none"});
+			        	$(".unidadesPR").css({display:"none"});
+			        	$(".unidadesPE").css({display:"none"});
+			        	$(".unidadesPI").css({display:"none"});
+			        	$(".unidadesRJ").css({display:"none"});
+			        	$(".unidadesRN").css({display:"none"});
+			        	$(".unidadesRS").css({display:"none"});
+			        	$(".unidadesRO").css({display:"none"});
+			        	$(".unidadesRR").css({display:"none"});
+			        	$(".unidadesSC").css({display:"none"});
+			        	$(".unidadesSP").css({display:"none"});
+			        	$(".unidadesSE").css({display:"none"});
+			        	$(".unidadesTO").css({display:"block"});
+			    	});
+				});
+			</script>	
+			<script type="text/javascript">
+				$(document).ready( function(){
+					$("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
+				});
+			</script>							
+    </head>
+    <body>           		    	 	 
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="border:none;height:35px;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>                    
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="menu">
+                        <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo strtoupper($this->translate('Menu Home')) ?></a></li>
+                        <li class="active"><a href="<?php echo $this->url('grife') ?>"><?php echo strtoupper($this->translate('Menu A Grife')) ?></a></li>
+                        <li class="active"><a href="<?php echo $this->url('prod') ?>"><?php echo strtoupper($this->translate('Menu Produtos')) ?></a></li>
+                        <li class="active"><a href="<?php echo $this->url('localizar') ?>"><?php echo strtoupper($this->translate('Menu Onde encontrar')) ?></a></li>
+                        <li class="active"><a href="<?php echo $this->url('contato') ?>"><?php echo strtoupper($this->translate('Menu Contato')) ?></a></li>
+                    </ul>
+                    <ul class="social">
+                    	<li class="active"><a href="https://www.youtube.com/VillagresCeramica" target="_new"><img src="/img/youtube.png" alt="Youtube"></a></li>
+                    	<li class="active"><a href="https://instagram.com/villagres" target="_new"><img src="/img/insta.png" alt="Instagram"/></a></li>
+                    	<li class="active"><a href="https://www.pinterest.com/villagres/" target="_new"><img src="/img/pinterest.png" alt="PInterest"/></a></li>
+                    	<li class="active"><a href="https://www.facebook.com/ceramicavillagres" target="_new"><img src="/img/fcbk.png" alt="Facebook"/></a></li>              	                    	                    	
+                    </ul>   
+					<ul class="idiomas" style="float:left;width:30%;color:#fff;font-size:12px;font-weight:bold;margin-top:7px;display:block;">
+						<?php 
+							switch($idioma){
+								case 'enus': $brazil = 'brasilbw.png'; $usa = 'usa.png'; break;
+								default: $brazil = 'brasil.png'; $usa = 'usabw.png'; break;
+							}
+						?>
+						<li style="width:80%;"><?php echo strtoupper($this->translate('Mensagem Selecione o idioma')) ?></li>
+						<li style="width:10%;text-align:right;"><a id="setPt"><img src="/img/<?php echo $brazil?>"></a></li>
+						<li style="width:10%;text-align:right;"><a id="setEn"><img src="/img/<?php echo $usa?>"></a></li>
+					</ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>        
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="top:35px;border:none;border-radius:0;background:#554A46;height:55px;">
+        	<div class="container">        		                
+               	<form class="filtros" action="<?php echo $this->url('busca') ?>" method="POST">
+                  	<ul>
+                   		<li>
+                   			<select name="filtroFormato" id="filtroFormato">
+                   				<option value=""><?php echo $this->translate('Item Menu Formato')?></option>
+                   				<?php foreach($this->layout()->formatos as $formato): ?>
+									<?php //if($formato->num_nao_lancamentos > 0):?>
+										<?php 
+											$item = 'filtro'.$language;
+										?>
+										<option value="<?php echo $formato->id; ?>"><?php echo $formato->$item?></option>
+									<?php //endif;?>
+								<?php endforeach; ?>
+                   			</select>
+                   		</li>
+                   		<li>
+                   			<select name="filtroColecao" id="filtroColecao">
+                   				<option value=""><?php echo $this->translate('Item Menu Colecao')?></option>
+                   				<?php foreach($this->layout()->colecoes as $colecao): ?>
+									<?php //if($colecao->num_nao_lancamentos > 0): ?>
+										<?php 
+											$item = 'colecao'.$language;
+										?>
+										<option value="<?php echo $colecao->id; ?>"><?php echo $colecao->$item?></option>
+									<?php //endif; ?>
+								<?php endforeach; ?>
+                   			</select>
+                   		</li>
+                   		<li>
+                   			<select name="filtroAcabamento" id="filtroAcabamento">
+                  				<option value=""><?php echo $this->translate('Item Menu Acabamento')?></option>
+								<?php foreach($this->layout()->acabamentos as $acabamento): ?>
+									<?php //if($acabamento->num_nao_lancamentos > 0):?>
+										<?php 
+											$item = 'filtro'.$language;
+										?>
+										<option value="<?php echo $acabamento->id; ?>"><?php echo $acabamento->$item?></option>
+									<?php //endif; ?>
+								<?php endforeach; ?>								                  												
+                   			</select>
+                   		</li>
+                   		<li>
+                   			<select name="filtroIndicacao" id="filtroIndicacao">
+                   				<option value=""><?php echo $this->translate('Item Menu Indicacao de uso')?></option>
+								<?php foreach($this->layout()->indicacoes as $indicacao): ?>
+									<?php //if($indicacao->num_nao_lancamentos > 0): ?>
+										<?php 
+											$item = 'filtro'.$language;
+										?>
+										<option value="<?php echo $indicacao->id; ?>"><?php echo $indicacao->$item?></option>
+									<?php //endif; ?>
+								<?php endforeach; ?>
+                   			</select>
+                   		</li>
+                   		<li>
+                   			<select name="filtroCor" id="filtroCor">
+                   				<option value=""><?php echo $this->translate('Item Menu Cor')?></option>
+                   				<?php foreach($this->layout()->cores as $cor): ?>
+									<?php //if($cor->num_nao_lancamentos > 0):?>
+										<?php 
+											$item = 'filtro'.$language;
+										?>
+										<option value="<?php echo $cor->id; ?>"><?php echo $cor->$item?></option>
+									<?php //endif; ?>
+								<?php endforeach; ?>
+                   			</select>
+                   		</li>
+                   		<li>
+                   			<input type="submit" value="<?php echo $this->translate('Item Menu Buscar')?>"/>
+                   		</li>
+                   	</ul>
+               </form>                
+        	</div>        	
+        </nav>
+        <div class="pix_diapo">
+			<?php foreach($this->layout()->banners as $banner): ?>
+					<div>
+						<img src="/img/banner/<?php echo $banner->imagem;?>">
+						<div class="caption elemHover ">
+							<h1><img src="/img/logo.png" alt="Villagres" /></h1>
+							<p><?php echo $this->translate('Mensagem Transformando ambientes')?></p>
+							<p><?php echo $this->translate('Mensagem Revestindo sonhos')?></p>
+						</div>
+					</div>                   
+			<?php endforeach; ?>         	
+       	</div>        
+        <div class="container">
+            <?php echo $this->content; ?>            
+        </div> <!-- /container -->
+        <footer>
+           <p>&copy; <?php echo $this->translate(utf8_encode('Copyright Cerâmica Villagres Ltda | Rua Vereador Gumercindo Fernandes Pereira | Jardim Parque Industrial | Santa Gertrudes | CEP 13510-970 | Tel: +55 19 3545 9000')) ?></p>
+        </footer>  
+		<script type="text/javascript">
+			$("#setEn").click(function(e){
+				e.preventDefault();
+				setLanguage('enus');
+				return false;
+			});
+			$("#setPt").click(function(e){
+				e.preventDefault();
+				setLanguage('ptbr');
+				return false;
+			});
+			function setLanguage(language){
+				$.get('/idiomas', { lang: language }).always(function(){
+					window.location.replace("/");
+				});
+			}
+		</script>
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>

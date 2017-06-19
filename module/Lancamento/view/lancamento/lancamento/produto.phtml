@@ -1,0 +1,152 @@
+<div class="interna">
+	<?php 
+		foreach($produtos as $produto){		
+	?>
+	<h1><?php echo $produto->linha;?></h1>
+	<div class="especificacoes">
+		<div class="bannerProduto">
+			<div class="banner">
+				<div id="slideshow">   
+					<?php
+					foreach($imagens as $img){
+					?>
+						<img border="0" src="/img/produto/<?php echo $img->imagem;?>" alt="" />							
+					<?php
+					}
+					?>
+				</div>
+			</div>			
+			<div class="legenda">
+				<?php 
+				foreach($legendas as $legenda){
+					if($legenda->id == 6 || $legenda->id == 8 || $legenda->id == 10 || $legenda->id == 11){
+						$width = 32;
+					}
+					else{
+						$width = 16;
+					}
+				?>
+					<div class="itemLegenda">
+						<img src="/img/legenda/<?php echo $legenda->imagem;?>" alt="" style="width:<?php echo $width;?>px;"/><span><?php echo $legenda->legenda;?></span>					
+					</div>
+				<?php
+				}	
+				?>				
+			</div>
+			<div class="sugestoes">
+				<h1><?php echo utf8_encode('Sugestão de Combinação')?></h1>
+				<p><a href="#"><?php echo utf8_encode('Itamaraty 71x71 cm')?></a></p>
+				<p><a href="#"><?php echo utf8_encode('Deck Caffé 71x71 cm')?></a></p>	
+				<p><a href="http://www.santaladrilhos.com.br"><?php echo utf8_encode('Ladrilho: conheça em www.santaladrilhos.com.br')?></a></p>
+			</div>
+		</div>
+		<div class="especificacaoProduto">
+			<p><?php echo $produto->texto;?></p>
+			<h2><?php echo $produto->filtro;?></h2>
+			<?php 
+			if($produto->layout == 22){
+			?>
+			<div class="bannerThumb">				
+				<div class="slider">
+					<div id="slider2">
+						<?php
+						$countFaces = 0;
+						foreach($faces as $face){
+							$countFaces++;
+						?>
+							<img border="0" src="/img/produto/<?php echo $face->imagem;?>" alt="" />							
+						<?php 
+						}
+						?>
+					</div>
+					<div class="legendaBanner">
+						<div class="esquerda">
+							<p><?php echo "Referência: ".$produto->referencia;?></p>
+							<p><?php echo "Tipologia: ".$produto->acabamento;?></p>
+							<p><?php echo "N° faces: ".$countFaces;?></p>
+						</div>				
+					</div>
+					<ul id="thumb2"></ul>
+					<div class="legendaBanner">						
+						<div class="direita">
+							<p><?php echo utf8_encode('Faces do produto')?></p>
+						</div>
+					</div>									
+				</div>
+			</div>
+			<?php
+			}else if($produto->layout == 23){
+			?>
+			<div class="bannerThumb">				
+				<div class="slider">
+					<div id="slider3">
+						<?php
+						$countFaces = 0;
+						foreach($faces as $face){
+							$countFaces++;
+						?>
+							<img border="0" src="/img/produto/<?php echo $face->imagem;?>" alt="" />							
+						<?php 
+						}
+						?>
+					</div>
+					<div class="legendaBanner">
+						<div class="esquerda">
+							<p><?php echo "Referência: ".$produto->referencia;?></p>
+							<p><?php echo "Tipologia: ".$produto->acabamento;?></p>
+							<p><?php echo "N° faces: ".$countFaces;?></p>
+						</div>				
+					</div>
+					<ul id="thumb3"></ul>
+					<div class="legendaBanner">						
+						<div class="direita">
+							<p><?php echo utf8_encode('Faces do produto')?></p>
+						</div>
+					</div>									
+				</div>
+			</div>			
+			<?php
+			}else{
+			?>
+			<div class="bannerThumb">				
+				<div class="slider">
+					<div id="slider1">
+						<?php
+						$countFaces = 0;
+						foreach($faces as $face){
+							$countFaces++;
+						?>
+							<img border="0" src="/img/produto/<?php echo $face->imagem;?>" alt="" />							
+						<?php 
+						}
+						?>
+					</div>
+					<ul id="thumb"> </ul>									
+				</div>
+			</div>
+			<div class="legendaBanner">
+				<div class="esquerda">
+					<p><?php echo "Referência: ".$produto->referencia;?></p>
+					<p><?php echo "Tipologia: ".$produto->acabamento;?></p>
+					<p>
+					<?php
+						if($produto->filtro == "Mosaico"){
+							echo "N° faces: Diversos (produzido manualmente)";
+						}
+						else{
+							echo "N° faces: ".$countFaces;
+						}
+					?>
+					</p>					
+				</div>
+				<div class="direita">
+					<p><?php echo $this->translate('Mensagem Faces do produto')?></p>
+				</div>
+			</div>
+			<?php
+			}
+			?>
+		</div>
+	</div>	
+	<?php } ?>
+</div>

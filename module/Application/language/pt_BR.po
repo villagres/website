@@ -1,0 +1,238 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ZendSkeletonApplication\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-05 22:17-0700\n"
+"PO-Revision-Date: 2016-06-05 20:30-0300\n"
+"Last-Translator: Diogo Melo <dmelo87@gmail.com>\n"
+"Language-Team: ZF Contibutors <zf-devteam@zend.com>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+msgid "Menu Home"
+msgstr "Home"
+
+msgid "Menu A Grife"
+msgstr "A Grife"
+
+msgid "Menu Produtos"
+msgstr "Produtos"
+
+msgid "Menu Onde encontrar"
+msgstr "Onde encontrar"
+
+msgid "Menu Contato"
+msgstr "Contato"
+
+msgid "Item Menu Formato"
+msgstr "Formato"
+
+msgid "Item Menu Colecao"
+msgstr "Coleção"
+
+msgid "Item Menu Acabamento"
+msgstr "Acabamento"
+
+msgid "Item Menu Indicacao de uso"
+msgstr "Indicação de uso"
+
+msgid "Item Menu Cor"
+msgstr "Cor"
+
+msgid "Item Menu Buscar"
+msgstr "Buscar"
+
+msgid "Mensagem Transformando ambientes"
+msgstr "Transformando ambientes"
+
+msgid "Mensagem Revestindo sonhos"
+msgstr "Revestindo sonhos"
+
+msgid "Mensagem Conheca a linha de ladrilhos"
+msgstr "Conheça a linha de ladrilhos"
+
+msgid "Mensagem Selecione o estado"
+msgstr "Os produtos Villagres estão presentes em todos os estados. Clique no seu estado abaixo no mapa."
+
+msgid "Mensagem Formulario de contato"
+msgstr "Formulário de contato"
+
+msgid "Mensagem Selecione o departamento"
+msgstr "Por favor, preencha o formulário abaixo e escolha o departamento que pretende se comunicar e retornaremos o contato em breve"
+
+msgid "Mensagem Nome"
+msgstr "Nome"
+
+msgid "Mensagem Email"
+msgstr "E-mail"
+
+msgid "Mensagem Departamento"
+msgstr "Departamento"
+
+msgid "Mensagem Mensagem"
+msgstr "Mensagem"
+
+msgid "Mensagem Enviar"
+msgstr "Enviar"
+
+msgid "Mensagem Saiba mais"
+msgstr "Saiba mais"
+
+msgid "Mensagem Venda tecnica"
+msgstr "Venda técnica"
+
+msgid "Mensagem Varejo"
+msgstr "Varejo"
+
+msgid "Mensagem Area de atuacao"
+msgstr "Área de atuação"
+
+msgid "Mensagem Distribuidor"
+msgstr "Distribuidor"
+
+msgid "Mensagem Para saber mais"
+msgstr "Para saber mais, clique aqui"
+
+msgid "Mensagem Clique aqui"
+msgstr "clique aqui"
+
+msgid "Mensagem Referencia"
+msgstr "Referência"
+
+msgid "Mensagem Tipologia"
+msgstr "Tipologia"
+
+msgid "Mensagem Faces do produto"
+msgstr "Faces do produto"
+
+msgid "Mensagem Selecione o idioma"
+msgstr "Selecione o idioma"
+
+msgid "Informacoes tecnicas Ficha tecnica"
+msgstr "Ficha técnica"
+
+msgid "Informacoes tecnicas Formato"
+msgstr "Formato"
+
+msgid "Informacoes tecnicas Espessura"
+msgstr "Espessura"
+
+msgid "Informacoes tecnicas Caracteristicas"
+msgstr "Características"
+
+msgid "Informacoes tecnicas Absorcao de agua"
+msgstr "Absorção de água"
+
+msgid "Informacoes tecnicas Resistencia ao gretamento"
+msgstr "Resistência ao gretamento"
+
+msgid "Informacoes tecnicas Resistencia flexao"
+msgstr "Resistência flexão"
+
+msgid "Informacoes tecnicas Coeficiente atrito"
+msgstr "Coeficiente atrito"
+
+msgid "Informacoes tecnicas Carga de ruptura"
+msgstr "Carga de ruptura"
+
+msgid "Informacoes tecnicas Resistencia ao impacto"
+msgstr "Resistência ao impacto"
+
+msgid "Informacoes tecnicas Expansao por umidade"
+msgstr "Expansão por umidade"
+
+msgid "Informacoes tecnicas Resistencia a manchamento"
+msgstr "Resistência a manchamento"
+
+msgid "Informacoes tecnicas Resistencia quimica"
+msgstr "Resistência química (uso doméstico e para tratamento de piscinas)"
+
+msgid "Informacoes tecnicas Resistencia quimica baixa concentracao"
+msgstr "Resistência química (baixa concentração)"
+
+msgid "Informacoes tecnicas Unidade"
+msgstr "Unidade"
+
+msgid "Informacoes tecnicas Fechar"
+msgstr "Fechar"
+
+msgid "Label Menu"
+msgstr "Menu"
+
+msgid "Label Itens do menu"
+msgstr "Itens do menu"
+
+msgid "Label Chamada"
+msgstr "Chamada"
+
+msgid "Label Colecao"
+msgstr "Coleção"
+
+msgid "Label Departamento"
+msgstr "Departamento"
+
+msgid "Label Informacoes tecnicas"
+msgstr "Informações técnicas"
+
+msgid "Label Legenda"
+msgstr "Legenda"
+
+msgid "Label Materia"
+msgstr "Matéria"
+
+msgid "Label Produtos"
+msgstr "Produtos"
+
+msgid "Label Linha"
+msgstr "Linha"
+
+msgid "Idioma"
+msgstr "ptbr"
+
+msgid "Label Eventos"
+msgstr "Eventos"
+
+msgid "Label Lancamentos"
+msgstr "Lançamentos"
+
+msgid "Label Formatos"
+msgstr "Formatos"
+
+msgid "Label Linhas"
+msgstr "Linhas"
+
+msgid "Mensagem Clique para conferir"
+msgstr "Clique para conferir"
+
+msgid "Mensagem Nao existem lancamentos"
+msgstr "Não existem lançamentos cadastrados para o ano de "
+
+msgid "Mensagem Ladrilhos"
+msgstr "Ladrilho: conheça em "
+
+msgid "Mensagem Diversos"
+msgstr "Diversos (produzido manualmente)"
+
+msgid "Mensagem Em breve"
+msgstr "Em breve"
+
+msgid "Mensagem Produto nao encontrado"
+msgstr "Produto não encontrado"
+
+msgid "Mensagem Resultados da busca"
+msgstr "Resultados da busca"
+
+msgid "Mensagem Sem filtro"
+msgstr "Sem filtro - Todos os produtos"
+
+msgid "Label Indicacao"
+msgstr "Indicação"
+
+msgid "Label Colecoes"
+msgstr "Coleções"

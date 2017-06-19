@@ -1,0 +1,95 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle(utf8_encode('Cerâmica Villagrês'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath('css/style.css'))
+                        ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+                        ->prependStylesheet($this->basePath('css/bootstrap.css'))
+                        ->prependStylesheet($this->basePath('css/estilo.css'))
+                        ->prependStylesheet($this->basePath('css/diapo.css')) 
+        ?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath('js/bootstrap.min.js'))      
+            ->prependFile($this->basePath('js/jquery.min.js'))
+            ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath('js/html5shiv.js'),   'text/javascript', array('conditional' => 'lt IE 9',))            
+        ; ?>		        	
+			<!--[if !IE]><!--><script type='text/javascript' src='js/jquery.mobile-1.0rc2.customized.min.js'></script><!--<![endif]-->
+			<script type='text/javascript' src='js/jquery.easing.1.3.js'></script> 
+			<script type='text/javascript' src='js/jquery.hoverIntent.minified.js'></script> 
+			<script type='text/javascript' src='js/diapo.js'></script> 		
+		 	<script type="text/javascript">
+				$(function(){
+					$('.pix_diapo').diapo();
+				});		
+			</script> 
+    </head>
+    <body style="margin: 0 auto;padding: 0;">       	  	    	 	                                
+        <div class="container" style="border:1px solid rgba(92, 78, 75, 0.8);padding:0;">
+        	<section id="areaadm">
+				<section class="topo">
+					<table>
+						<tr>
+							<td><img src="/img/logo2.png" alt="Villagres" /></td>
+							<td><h1><?php echo $this->translate(utf8_encode('Área restrita'))?></h1></td>
+							<td><h2><?php echo $this->translate(utf8_encode('Olá').' '.strtoupper('Admin'))?></h2></td>
+							<td><a href="/login">Sair</a></td>
+						</tr>
+					</table>																		
+				</section>
+				<section class="conteudo">
+					<?php 
+						$endereco = $_SERVER ['REQUEST_URI'];
+						$endereco = substr($endereco,1);						
+						if(strstr($endereco,"/")){
+							$partes = explode("/",$endereco);
+							$item = $partes[1];												
+						}
+						else{
+							$item = $endereco;
+						}
+					?>
+					<nav class="menuadm">
+						<ul class="menuadmconteudo">
+							<li class="active" <?php if(($item== 'banner')||($item == "edita-banner")||($item == "deleta-banner")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('banner')?>" <?php if(($item== 'banner')||($item == "edita-banner")||($item == "deleta-banner")){echo "style='color:#fff'";}?>><?php echo $this->translate('Banner')?></a></li>
+							<li class="active" <?php if(($item== 'chamadas')||($item == "edita-chamada")||($item == "deleta-chamada")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('chamadas')?>" <?php if(($item== 'chamadas')||($item == "edita-chamada")||($item == "deleta-chamada")){echo "style='color:#fff'";}?>><?php echo $this->translate('Chamadas index')?></a></li>
+							<li class="active" <?php if(($item== 'linhas')||($item == "edita-linha")||($item == "deleta-linha")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('linha')?>" <?php if(($item== 'linhas')||($item == "edita-linha")||($item == "deleta-linha")){echo "style='color:#fff'";}?>><?php echo $this->translate('Linhas')?></a></li>
+							<li class="active" <?php if(($item== 'formatos')||($item == "edita-formato")||($item == "deleta-formato")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('formatos')?>" <?php if(($item== 'formatos')||($item == "edita-formato")||($item == "deleta-formato")){echo "style='color:#fff'";}?>><?php echo $this->translate('Formatos')?></a></li>
+							<li class="active" <?php if(($item== 'colecoes')||($item == "edita-colecao")||($item == "deleta-colecao")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('colecoes')?>" <?php if(($item== 'colecoes')||($item == "edita-colecao")||($item == "deleta-colecao")){echo "style='color:#fff'";}?>><?php echo $this->translate(utf8_encode('Coleções'))?></a></li>
+							<li class="active" <?php if(($item== 'acabamento')||($item == "edita-acabamento")||($item == "deleta-acabamento")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('acabamento')?>" <?php if(($item== 'acabamento')||($item == "edita-acabamento")||($item == "deleta-acabamento")){echo "style='color:#fff'";}?>><?php echo $this->translate('Acabamento')?></a></li>
+							<li class="active" <?php if(($item== 'indicacoes')||($item == "edita-indicacao")||($item == "deleta-indicacao")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('indicacoes')?>" <?php if(($item== 'indicacoes')||($item == "edita-indicacao")||($item == "deleta-indicacao")){echo "style='color:#fff'";}?>><?php echo $this->translate(utf8_encode('Indicações de uso'))?></a></li>
+							<li class="active" <?php if(($item== 'cores')||($item == "edita-cor")||($item == "deleta-cor")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('cores')?>" <?php if(($item== 'cores')||($item == "edita-cor")||($item == "deleta-cor")){echo "style='color:#fff'";}?>><?php echo $this->translate('Cores')?></a></li>
+							<li class="active" <?php if(($item== 'departamentos')||($item == "edita-departamento")||($item == "deleta-departamento")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('departamentos')?>" <?php if(($item== 'departamentos')||($item == "edita-departamento")||($item == "deleta-departamento")){echo "style='color:#fff'";}?>><?php echo $this->translate('Departamentos')?></a></li>
+							<li class="active" <?php if(($item== 'representantes')||($item == "edita-representante")||($item == "deleta-representante")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('representantes')?>" <?php if(($item== 'representantes')||($item == "edita-representante")||($item == "deleta-representante")){echo "style='color:#fff'";}?>><?php echo $this->translate('Representantes')?></a></li>
+							<li class="active" <?php if(($item== 'textos')||($item == "edita-texto")||($item == "deleta-texto")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('textos')?>" <?php if(($item== 'textos')||($item == "edita-texto")||($item == "deleta-texto")){echo "style='color:#fff'";}?>><?php echo $this->translate('Textos')?></a></li>
+							<li class="active" <?php if(($item== 'imagens')||($item == "edita-imagem")||($item == "deleta-imagem")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('imagens')?>" <?php if(($item== 'imagens')||($item == "edita-imagem")||($item == "deleta-imagem")){echo "style='color:#fff'";}?>><?php echo $this->translate('Imagens')?></a></li>
+							<li class="active" <?php if(($item== 'sugestoes')||($item == "edita-sugestao")||($item == "deleta-sugestao")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('sugestoes')?>" <?php if(($item== 'sugestoes')||($item == "edita-sugestao")||($item == "deleta-sugestao")){echo "style='color:#fff'";}?>><?php echo $this->translate(utf8_encode('Sugestões'))?></a></li>
+							<li class="active" <?php if(($item== 'produtos')||($item == "edita-produto")||($item == "deleta-produto")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('produtos')?>" <?php if(($item== 'produtos')||($item == "edita-produto")||($item == "deleta-produto")){echo "style='color:#fff'";}?>><?php echo $this->translate('Produtos')?></a></li>
+							<li class="active" <?php if(($item== 'img-prod')||($item == "edita-imgprod")||($item == "deleta-imgprod")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('imgprod')?>" <?php if(($item== 'img-prod')||($item == "edita-imgprod")||($item == "deleta-imgprod")){echo "style='color:#fff'";}?>><?php echo $this->translate('Imagens Produto')?></a></li>
+							<li class="active" <?php if(($item== 'faces-prod')||($item == "edita-facesprod")||($item == "deleta-facesprod")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('facesprod')?>" <?php if(($item== 'faces-prod')||($item == "edita-facesprod")||($item == "deleta-facesprod")){echo "style='color:#fff'";}?>><?php echo $this->translate('Faces Produto')?></a></li>
+							<li class="active" <?php if(($item== 'noticias')||($item == "edita-noticia")||($item == "deleta-noticia")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('noticias')?>" <?php if(($item== 'noticias')||($item == "edita-noticia")||($item == "deleta-noticia")){echo "style='color:#fff'";}?>><?php echo $this->translate(utf8_encode('Notícias'))?></a></li>
+							<li class="active" <?php if(($item== 'usuarios')||($item == "edita-usuario")||($item == "deleta-usuario")){echo "style='background: rgba(92, 78, 75, 0.8)'";}?>><a href="<?php echo $this->url('usuarios')?>" <?php if(($item== 'usuarios')||($item == "edita-usuario")||($item == "deleta-usuario")){echo "style='color:#fff'";}?>><?php echo $this->translate(utf8_encode('Usuários'))?></a></li>
+						</ul>
+					</nav>		
+					<?php echo $this->content; ?>
+				</section>
+				<section class="rdpAdm">
+					<p>&copy; <?php echo $this->translate(utf8_encode('Copyright Cerâmica Villagrês Ltda | Rua Vereador Gumercindo Fernandes Pereira | Jardim Parque Industrial | Santa Gertrudes | CEP 13510-970 | Tel: +55 19 3545 9000')) ?></p>
+				</section>				
+			</section>                       
+        </div> <!-- /container -->                      
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>

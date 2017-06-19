@@ -1,0 +1,57 @@
+<?php
+$idioma = $this->translate('Idioma'); 
+	
+function multiLanguageLancamentos($language){
+	$value = '';
+	switch($language){			
+		case 'enus': $value = '_en'; break;
+		default: $value = ''; break;
+	}
+	return $value;
+}
+	
+$language = multiLanguageLancamentos($idioma);
+$filtro = 'filtro'.$language;
+?>
+<div class="interna">
+	<h1><?php echo $this->translate('Label Lancamentos')?></h1>
+	<div id="colecoes">		
+		<?php									
+			if(count($linhas) > 0):							
+				foreach($linhas as $linha):
+					if($linha->num_lancamentos > 0):
+		?>
+					<div class="colecao">
+						<img src="/img/linha/<?php echo $linha->imagem; ?>" alt="<?php echo $linha->linha; ?>" />
+						<span class="texto" onclick="location.href='<?php echo $this->url('lancamento',array('controller'=>'lancamento','action'=>'linha','id'=>$linha->id)); ?>'">
+							<a href="<?php echo $this->url('lancamento',array('controller'=>'lancamento','action'=>'linha','id'=>$linha->id)); ?>">
+								<p class="label"><?php echo utf8_encode('Formatos');?></p>								
+								<?php
+								if(count($formatos) > 0):
+									foreach($formatos as $formato):										
+										if($linha->id == $formato->id):
+								?>
+											<p><?php echo $formato->$filtro; ?></p>
+								<?php									
+										endif;
+									endforeach;
+								endif;
+								?>
+							</a>				
+						</span>
+					</div>
+		<?php
+				endif;
+				endforeach;
+			else:
+		?>
+				<p><?php echo $this->translate('Mensagem Nao existem lancamentos').date('Y');?></p>
+		<?php
+			endif;
+		?>			
+		<div class="santaLadrilhos">		
+			<a href="http://www.santaladrilhos.com.br"><img src="/img/santa.png" alt="Santa Ladrilhos" /></a>
+			<p><?php echo $this->translate('Mensagem Conheca a linha de ladrilhos')?></p>
+		</div>
+	</div>
+</div>

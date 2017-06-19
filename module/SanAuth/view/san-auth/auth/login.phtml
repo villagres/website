@@ -1,0 +1,50 @@
+<section class="login">
+	<img src="/img/logo.png" alt="Villagres" />
+	<h1><?php echo utf8_encode('Área Restrita')?></h1>	
+	<?php 
+		$form = $this->form;
+		$form->prepare();
+		$form->setAttribute('action',$this->url('login/process',array('action'=>'authenticate')));
+		$form->setAttribute('method','post');		
+		echo $this->form()->openTag($form);
+	?>
+	<dl class="zend_form">
+		<dt><?php echo $this->formLabel($form->get('login'));?></dt>
+		<dd>
+			<?php 
+				echo $this->formElement($form->get('login'));				
+			?>
+		</dd>
+		<dd>
+			<?php echo $this->formElementErrors($form->get('login')); ?>
+		</dd>
+		<dt><?php echo $this->formLabel($form->get('senha'));?></dt>
+		<dd>
+			<?php 
+				echo $this->formElement($form->get('senha'));				
+			?>			
+		</dd>
+		<dd>
+			<?php echo $this->formElementErrors($form->get('senha')); ?>
+		</dd>			
+		<dd>
+			<?php echo $this->formElement($form->get('lembre')).' <span style="float:right;text-align:left;width:220px;">'.$this->formLabel($form->get('lembre')).'</span>'?>
+		</dd>
+		<dd>
+			<?php 
+				echo $this->formElement($form->get('submit'));
+				echo $this->formElementErrors($form->get('submit'));
+			?>
+		</dd>
+	</dl>	
+	<?php echo $this->form()->closeTag() ?>
+	<?php 
+		if($this->messages){
+			echo '<ul>';
+			foreach($this->messages as  $message){
+				echo '<li>'.$message.'</li>';
+			}
+			echo '</ul>';
+		}
+	?>
+</section>

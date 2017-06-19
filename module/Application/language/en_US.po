@@ -1,0 +1,238 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ZendSkeletonApplication\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-05 22:17-0700\n"
+"PO-Revision-Date: 2016-06-05 20:31-0300\n"
+"Last-Translator: Evan Coury <me@evancoury.com>\n"
+"Language-Team: ZF Contibutors <zf-devteam@zend.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+msgid "Menu Home"
+msgstr "Home"
+
+msgid "Menu A Grife"
+msgstr "Brand"
+
+msgid "Menu Produtos"
+msgstr "Products"
+
+msgid "Menu Onde encontrar"
+msgstr "Where to find"
+
+msgid "Menu Contato"
+msgstr "Contact"
+
+msgid "Item Menu Formato"
+msgstr "Size"
+
+msgid "Item Menu Colecao"
+msgstr "Collection"
+
+msgid "Item Menu Acabamento"
+msgstr "Finishing"
+
+msgid "Item Menu Indicacao de uso"
+msgstr "Use recommendation"
+
+msgid "Item Menu Cor"
+msgstr "Color"
+
+msgid "Item Menu Buscar"
+msgstr "Search"
+
+msgid "Mensagem Transformando ambientes"
+msgstr "Transforming atmospheres"
+
+msgid "Mensagem Revestindo sonhos"
+msgstr "Fulfilling dreams"
+
+msgid "Mensagem Conheca a linha de ladrilhos"
+msgstr "Check our trims line"
+
+msgid "Mensagem Selecione o estado"
+msgstr "Villagres products are available in every state. Click on your state in the map below."
+
+msgid "Mensagem Formulario de contato"
+msgstr "Application form for contact"
+
+msgid "Mensagem Selecione o departamento"
+msgstr "Please, fill in the application form below and choose the department you would like to contact, and we will get back to you soon"
+
+msgid "Mensagem Nome"
+msgstr "Name"
+
+msgid "Mensagem Email"
+msgstr "E-mail"
+
+msgid "Mensagem Departamento"
+msgstr "Department"
+
+msgid "Mensagem Mensagem"
+msgstr "Message"
+
+msgid "Mensagem Enviar"
+msgstr "Send"
+
+msgid "Mensagem Saiba mais"
+msgstr "Learn more"
+
+msgid "Mensagem Venda tecnica"
+msgstr "Technical sales"
+
+msgid "Mensagem Varejo"
+msgstr "Retailing"
+
+msgid "Mensagem Area de atuacao"
+msgstr "Area of work"
+
+msgid "Mensagem Distribuidor"
+msgstr "Distributor"
+
+msgid "Mensagem Para saber mais"
+msgstr "Click here for further information"
+
+msgid "Mensagem Clique aqui"
+msgstr "Click here "
+
+msgid "Mensagem Referencia"
+msgstr "Reference"
+
+msgid "Mensagem Tipologia"
+msgstr "Typology"
+
+msgid "Mensagem Faces do produto"
+msgstr "Product faces"
+
+msgid "Mensagem Selecione o idioma"
+msgstr "Choose your language"
+
+msgid "Informacoes tecnicas Ficha tecnica"
+msgstr "Technical data"
+
+msgid "Informacoes tecnicas Formato"
+msgstr "Size"
+
+msgid "Informacoes tecnicas Espessura"
+msgstr "Thickness"
+
+msgid "Informacoes tecnicas Caracteristicas"
+msgstr "Features"
+
+msgid "Informacoes tecnicas Absorcao de agua"
+msgstr "Water absorption"
+
+msgid "Informacoes tecnicas Resistencia ao gretamento"
+msgstr "Crazing resistance"
+
+msgid "Informacoes tecnicas Resistencia flexao"
+msgstr "Bending resistance"
+
+msgid "Informacoes tecnicas Coeficiente atrito"
+msgstr "Friction coefficient"
+
+msgid "Informacoes tecnicas Carga de ruptura"
+msgstr "Break strength"
+
+msgid "Informacoes tecnicas Resistencia ao impacto"
+msgstr "Impact resistance"
+
+msgid "Informacoes tecnicas Expansao por umidade"
+msgstr "Humidity expansion"
+
+msgid "Informacoes tecnicas Resistencia a manchamento"
+msgstr "Stain resistance"
+
+msgid "Informacoes tecnicas Resistencia quimica"
+msgstr "Chemical resistance (domestic use and for swimming pool treatment)"
+
+msgid "Informacoes tecnicas Resistencia quimica baixa concentracao"
+msgstr "Chemical resistance (low concentration)"
+
+msgid "Informacoes tecnicas Unidade"
+msgstr "Unity"
+
+msgid "Informacoes tecnicas Fechar"
+msgstr "Close"
+
+msgid "Label Menu"
+msgstr "Menu"
+
+msgid "Label Itens do menu"
+msgstr "Menu items"
+
+msgid "Label Chamada"
+msgstr "Call"
+
+msgid "Label Colecao"
+msgstr "Collection"
+
+msgid "Label Departamento"
+msgstr "Department"
+
+msgid "Label Informacoes tecnicas"
+msgstr "Technical information"
+
+msgid "Label Legenda"
+msgstr "Legend"
+
+msgid "Label Materia"
+msgstr "News"
+
+msgid "Label Produtos"
+msgstr "Products"
+
+msgid "Label Linha"
+msgstr "Line"
+
+msgid "Idioma"
+msgstr "enus"
+
+msgid "Label Eventos"
+msgstr "Events"
+
+msgid "Label Lancamentos"
+msgstr "Releases"
+
+msgid "Label Formatos"
+msgstr "Sizes"
+
+msgid "Label Linhas"
+msgstr "Lines"
+
+msgid "Mensagem Clique para conferir"
+msgstr "Click to check it"
+
+msgid "Mensagem Nao existem lancamentos"
+msgstr "There are no registered entries for the year "
+
+msgid "Mensagem Ladrilhos"
+msgstr "Trim: Check it in "
+
+msgid "Mensagem Diversos"
+msgstr "Miscellaneous (produced manually)"
+
+msgid "Mensagem Em breve"
+msgstr "Coming soon"
+
+msgid "Mensagem Produto nao encontrado"
+msgstr "Product not found"
+
+msgid "Mensagem Resultados da busca"
+msgstr "Search results"
+
+msgid "Mensagem Sem filtro"
+msgstr "No filter - All products"
+
+msgid "Label Indicacao"
+msgstr "Recommendation"
+
+msgid "Label Colecoes"
+msgstr "Collections"

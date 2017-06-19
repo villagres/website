@@ -1,0 +1,23 @@
+<?php
+
+namespace Application\Model;
+
+use Zend\Db\TableGateway\TableGateway;
+
+class ProdutoTable{
+	protected $tableGateway;
+
+	public function __construct(TableGateway $tableGateway){
+		$this->tableGateway = $tableGateway;
+	}
+
+	public function fetchAll($linha){
+		$resultSet = $this->tableGateway->select('linha' => $linha);
+		return $resultSet;
+	}
+
+	public function fetchProduto($id){
+		$resultSet = $this->tableGateway->select('id' => $id);
+		return $resultSet;
+	}
+}

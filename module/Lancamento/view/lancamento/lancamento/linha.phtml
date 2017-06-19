@@ -1,0 +1,66 @@
+<div class="interna">	
+	<?php
+		foreach($linha as $ln){
+	?>
+			<h1><?php echo $ln->linha;?></h1>
+	<?php
+		}
+	?>
+	<div id="produtos">
+	<?php 
+		foreach($produtos as $produto){
+			switch($produto->formato){
+				case 1: 
+				case 26:
+				case 27:
+					$title = 'produto24100';
+					break;
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+					$title = 'produto30';
+					break;
+				case 6:
+				case 28:
+				case 29:
+				case 30:				
+					$title = 'produto50100';
+					break;
+				case 7:
+				case 8:
+				case 21:
+				case 25:
+					$title = 'produto60';
+					break;
+				default:
+					$title = 'produto30';
+					break;
+			}
+	?>
+		<div class="<?php echo $title;?>">
+			<a href="<?php echo $this->url('lancamento',array('controller'=>'lancamento','action'=>'produto','id'=>$produto->referencia)); ?>">
+				<?php
+					$count = 0;
+					$fc = [];
+					foreach($faces as $face){													
+						if($face->produto == $produto->id){
+							$fc[$count] = $face->imagem;							
+							$count++;
+				?>							
+				<?php
+						}
+					}
+				?>				
+				<img src="/img/produto/<?php echo $fc[$count - 1];?>"/>
+				<span class="texto">
+					<?php echo $this->translate('Mensagem Para saber mais');?>
+				</span>
+			</a>			
+			<p><?php echo $produto->referencia." - ".$produto->filtro;?></p>
+		</div>
+	<?php
+		}
+	?>	
+	</div>
+</div>

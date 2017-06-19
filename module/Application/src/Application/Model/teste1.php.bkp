@@ -1,0 +1,42 @@
+<?php
+
+namespace Application\Model;
+
+use Zend\Db\TableGateway\TableGateway;
+
+class ProdutoTable{
+	protected $tableGateway;
+
+	public function __construct(TableGateway $tableGateway){
+		$this->tableGateway = $tableGateway;
+	}
+
+	public function fetchAll($linha){
+		$resultSet = $this->tableGateway->select(array('linha' => $linha));
+		$resultSet->buffer();
+		return $resultSet;
+	}
+
+	public function fetchProduto($id){
+		$resultSet = $this->tableGateway->select(array('id' => $id));
+		$resultSet->buffer();
+		return $resultSet;
+	}
+
+	public function search($formato,$colecao,$acabamento,$indicacao,$cor){		
+		$resultSet = $this->tableGateway->select(function(Select $select) use ($formato,$colecao,$acabamento,$indicacao,$cor){
+			if(!empty($formato))
+				$select->where->equalTo('formato',$formato);
+			if(!empty($colecao))
+				$select->where->equalTo('colecao',$colecao);
+			if(!empty($acabamento))
+				$select->where->equalTo('acabamento',$acabamento)
+			if(!empty($indicacao))
+				$select->where->equalTo('indicacao',$indicacao);
+			if(!empty($cor))
+				$select->where->equalTo('cor',$cor);
+		});
+		$resultSet->buffer();
+		return $resultSet;
+	}
+}

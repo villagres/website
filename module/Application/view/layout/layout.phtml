@@ -1,0 +1,237 @@
+<?php echo $this->doctype(); ?>
+
+<?php 	
+	$idioma = $this->translate('Idioma'); 
+	//$idioma = (isset($_SESSION['lang']) && !empty($_SESSION['lang'])) ? $_SESSION['lang'] : 'ptbr'; 
+	
+	function multiLanguage($language){
+		$value = '';
+		switch($language){			
+			case 'enus': $value = '_en'; break;
+			default: $value = ''; break;
+		}
+		return $value;
+	}
+	
+	$language = multiLanguage($idioma);
+?>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle(utf8_encode('Cerâmica Villagres'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath('css/style.css'))
+                        ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+                        ->prependStylesheet($this->basePath('css/bootstrap.css'))
+                        ->prependStylesheet($this->basePath('css/estilo.css'))
+                        ->prependStylesheet($this->basePath('css/diapo.css')) 
+        ?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath('/js/bootstrap.min.js'))      
+            ->prependFile($this->basePath('/js/jquery.min.js'))
+            ->prependFile($this->basePath('/js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath('/js/html5shiv.js'),   'text/javascript', array('conditional' => 'lt IE 9',))            
+        ; ?>		        	
+			<!--[if !IE]><!--><script type='text/javascript' src='/js/jquery.mobile-1.0rc2.customized.min.js'></script><!--<![endif]-->
+			<script type='text/javascript' src='/js/jquery.easing.1.3.js'></script> 
+			<script type='text/javascript' src='/js/jquery.hoverIntent.minified.js'></script> 
+			<script type='text/javascript' src='/js/diapo.js'></script> 		
+		 	<script type="text/javascript">
+				$(function(){
+					$('.pix_diapo').diapo();
+				});		
+			</script> 			
+    </head>
+    <body>   
+    	<div class="pix_diapo">
+			<?php foreach($this->layout()->banners as $banner): ?>
+					<div>
+						<img src="/img/banner/<?php echo $banner->imagem;?>">
+						<div class="caption elemHover ">
+							<h1><img src="/img/logo.png" alt="Villagres" /></h1>
+							<p class="subtitulo"><?php echo $this->translate('Label Linha').' '.$banner->linha?></p>
+							<?php if($banner->lancamento == 1 && $banner->link != 1):?>
+								<p><a href="http://www.villagres.com.br/lancamentos/<?php echo date('Y');?>"><?php echo strtoupper($this->translate('Mensagem Saiba mais'))?></a></p>
+							<?php elseif($banner->link == 1 && $banner->lancamento != 1):?>
+								<p><a href="http://<?php echo $banner->endereco?>"><?php echo strtoupper($this->translate('Mensagem Saiba mais'))?></a></p>
+							<?php else:?>
+								<p><a href="<?php echo $this->url('lista-produtos',array('controller'=>'linhas','action'=>'produtos','id'=>$banner->id)); ?>"><?php echo strtoupper($this->translate('Mensagem Saiba mais'))?></a></p>
+							<?php endif;?>
+							
+						</div>
+            </div>                   
+			<?php endforeach; ?>        	            
+       	</div>    	    	 	   
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="border:none;height:35px;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>                    
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="menu">
+                        <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo strtoupper($this->translate('Menu Home')) ?></a></li>
+                        <li class="active"><a href="<?php echo $this->url('grife') ?>"><?php echo strtoupper($this->translate('Menu A Grife')) ?></a></li>
+                        <li class="active"><a href="<?php echo $this->url('prod') ?>"><?php echo strtoupper($this->translate('Menu Produtos')) ?></a></li>
+                        <li class="active"><a href="<?php echo $this->url('localizar') ?>"><?php echo strtoupper($this->translate('Menu Onde encontrar')) ?></a></li>
+                        <li class="active"><a href="<?php echo $this->url('contato') ?>"><?php echo strtoupper($this->translate('Menu Contato')) ?></a></li>
+                    </ul>
+                    <ul class="social">
+                    	<li class="active"><a href="https://www.youtube.com/VillagresCeramica" target="_new"><img src="/img/youtube.png" alt="Youtube"></a></li>
+                    	<li class="active"><a href="https://instagram.com/villagres" target="_new"><img src="/img/insta.png" alt="Instagram"/></a></li>
+                    	<li class="active"><a href="https://www.pinterest.com/villagres/" target="_new"><img src="/img/pinterest.png" alt="PInterest"/></a></li>
+                    	<li class="active"><a href="https://www.facebook.com/ceramicavillagres" target="_new"><img src="/img/fcbk.png" alt="Facebook"/></a></li>                    	                    	                    	
+                    </ul>
+					<ul class="idiomas" style="float:left;width:30%;color:#fff;font-size:12px;font-weight:bold;margin-top:7px;display:block;">
+						<?php 
+							switch($idioma){
+								case 'enus': $brazil = 'brasilbw.png'; $usa = 'usa.png'; break;
+								default: $brazil = 'brasil.png'; $usa = 'usabw.png'; break;
+							}
+						?>
+						<li style="width:80%;"><?php echo strtoupper($this->translate('Mensagem Selecione o idioma')) ?></li>
+						<li style="width:10%;text-align:right;"><a id="setPt" ><img src="/img/<?php echo $brazil?>"></a></li>
+						<li style="width:10%;text-align:right;"><a id="setEn" ><img src="/img/<?php echo $usa?>"></a></li>
+					</ul>	
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>        
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="top:35px;border:none;border-radius:0;background:#554A46;height:55px;">
+        	<div class="container">        		                
+               	<form class="filtros" action="<?php echo $this->url('busca') ?>" method="POST">
+                  	<ul>
+                   		<li>
+                   			<select name="filtroFormato" id="filtroFormato">
+                   				<option value=""><?php echo $this->translate('Item Menu Formato')?></option>
+                   				<?php foreach($this->layout()->formatos as $formato): ?>									
+									<?php //if($formato->num_nao_lancamentos > 0):?>
+										<?php 
+											$item = 'filtro'.$language;
+										?>
+										<option value="<?php echo $formato->id; ?>"><?php echo $formato->$item; ?></option>
+									<?php //endif;?>
+								<?php endforeach; ?>
+                   			</select>
+                   		</li>
+                   		<li>
+                   			<select name="filtroColecao" id="filtroColecao">
+                   				<option value=""><?php echo $this->translate('Item Menu Colecao')?></option>
+                   				<?php foreach($this->layout()->colecoes as $colecao): ?>
+									<?php //if($colecao->num_nao_lancamentos > 0): ?>
+										<?php 
+											$item = 'colecao'.$language;
+										?>
+										<option value="<?php echo $colecao->id; ?>"><?php echo $colecao->$item?></option>
+									<?php //endif; ?>
+								<?php endforeach; ?>
+                   			</select>
+                   		</li>
+                   		<li>
+                   			<select name="filtroAcabamento" id="filtroAcabamento">
+                  				<option value=""><?php echo $this->translate('Item Menu Acabamento')?></option>
+								<?php foreach($this->layout()->acabamentos as $acabamento): ?>
+									<?php //if($acabamento->num_nao_lancamentos > 0):?>
+										<?php 
+											$item = 'filtro'.$language;
+										?>
+										<option value="<?php echo $acabamento->id; ?>"><?php echo $acabamento->$item?></option>
+									<?php //endif;?>
+								<?php endforeach; ?>								                  												
+                   			</select>
+                   		</li>
+                   		<li>
+                   			<select name="filtroIndicacao" id="filtroIndicacao">
+                   				<option value=""><?php echo $this->translate('Item Menu Indicacao de uso')?></option>
+								<?php foreach($this->layout()->indicacoes as $indicacao): ?>
+									<?php //if($indicacao->num_nao_lancamentos > 0):?>
+										<?php 
+											$item = 'filtro'.$language;
+										?>
+										<option value="<?php echo $indicacao->id; ?>"><?php echo $indicacao->$item?></option>
+									<?php //endif; ?>
+								<?php endforeach; ?>
+                   			</select>
+                   		</li>
+                   		<li>
+                   			<select name="filtroCor" id="filtroCor">
+                   				<option value=""><?php echo $this->translate('Item Menu Cor')?></option>
+                   				<?php foreach($this->layout()->cores as $cor): ?>
+									<?php //if($cor->num_nao_lancamentos > 0): ?>
+										<?php
+											$item = 'filtro'.$language;
+										?>
+										<option value="<?php echo $cor->id; ?>"><?php echo $cor->$item?></option>
+									<?php //endif; ?>
+								<?php endforeach; ?>
+                   			</select>
+                   		</li>
+                   		<li>
+                   			<input type="submit" value="<?php echo $this->translate('Item Menu Buscar')?>"/>
+                   		</li>
+                   	</ul>
+               </form>                
+        	</div>        	
+        </nav>        
+        <div class="container">
+            <?php echo $this->content; ?>            
+        </div> <!-- /container -->       
+        <footer>
+           <div class="miniaturas">
+				<?php if(count($this->layout()->chamadas) > 0): ?>
+					<?php foreach($this->layout()->chamadas as $chamada): ?>
+						<div class="mini">
+							<?php 
+								$item = 'imagem'.$language;								
+								switch($idioma){
+									case "enus" : $idealize = 'idealize.png'; break;
+									default: $idealize = 'box4.png'; break;
+								}
+							?>
+							<img src="/img/chamada/<?php echo $chamada->$item ?>" alt="" />
+							<a href="<?php echo $this->url('materia-detalhe',array('controller'=>'blog','action'=>'materia','id'=>$chamada->materia)); ?>" class="texto"></a>           			
+						</div>           		           		
+					<?php endforeach; ?>
+				<?php endif; ?>           		
+				<div class="mini">
+           			<img src="/img/downloads.jpg" alt="" />
+           			<a href="/downloads" class="texto"></a>
+           		</div>
+				<div class="mini">
+           			<img src="/img/<?php echo $idealize;?>" alt="" />
+           			<a href="/idealize" class="texto"></a>
+           		</div>				
+           </div>
+           <p>&copy; <?php echo $this->translate(utf8_encode('Copyright Cerâmica Villagres Ltda | Rua Vereador Gumercindo Fernandes Pereira | Jardim Parque Industrial | Santa Gertrudes | CEP 13510-970 | Tel: +55 19 3545 9000')) ?></p>
+        </footer>       
+		<script type="text/javascript">
+			$("#setEn").click(function(e){
+				e.preventDefault();
+				setLanguage('enus');
+				return false;
+			});
+			$("#setPt").click(function(e){
+				e.preventDefault();
+				setLanguage('ptbr');
+				return false;
+			});
+			function setLanguage(language){
+				$.get('/idiomas', { lang: language }).always(function(){
+					window.location.replace("/");
+				});
+			}
+		</script>
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>

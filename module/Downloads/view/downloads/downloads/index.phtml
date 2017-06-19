@@ -1,0 +1,120 @@
+<style>
+	.subtitle{font-size:14px;font-weight:bold;}
+</style>
+<div class="interna">	
+	<h1>Downloads</h1>
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		<div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="headingOne">
+				<h4 class="panel-title">
+					<a class="collapsed subtitle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+						Revistas
+					</a>
+				</h4>
+			</div>
+			<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+				<div class="panel-body">
+					<?php
+						if(count($revistas) > 0){
+							foreach($revistas as $revista){																																							
+					?>			
+								<div class="col-sm-2 col-md-2 col-xs-2">
+									<img src="/documentos/capa/<?php echo $revista->capa; ?>" alt="" width="100%;">
+									<p><center><a href="/documentos/arquivo/<?php echo $revista->arquivo; ?>" download><?php echo $revista->descricao; ?></a></center></p>
+								</div>
+					<?php
+							}
+						}
+						else{
+							echo "<p>Não existem revistas cadastradas. </p>";
+					}
+					?>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="headingTwo">
+				<h4 class="panel-title">
+					<a class="collapsed subtitle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						Catálogos
+					</a>
+				</h4>
+			</div>
+			<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+				<div class="panel-body">
+					<?php 
+						if(count($catalogos) > 0){
+							foreach($catalogos as $catalogo){
+					?>			
+								<div class="col-sm-2 col-md-2 col-xs-2">
+									<img src="/documentos/capa/<?php echo $catalogo->capa; ?>" alt="" width="100%;">
+									<p><center><a href="/documentos/arquivo/<?php echo $catalogo->arquivo; ?>" download><?php echo $catalogo->descricao; ?></a></center></p>
+								</div>
+					<?php			
+						}
+					}
+					else{
+						echo "<p>Não existem catálogos cadastrados.</p>";
+					}
+					?>
+				</div>
+			</div>
+		</div>  
+		<div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="headingThree">
+				<h4 class="panel-title">
+					<a class="collapsed subtitle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						Manuais
+					</a>
+				</h4>
+			</div>
+			<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+				<div class="panel-body">
+					<?php 
+						if(count($manuais) > 0){
+							foreach($manuais as $manual){
+					?>			
+								<div class="col-sm-2 col-md-2 col-xs-2">
+									<img src="/documentos/capa/<?php echo $manual->capa; ?>" alt="" width="100%;">
+									<p><center><a href="/documentos/arquivo/<?php echo $manual->arquivo; ?>" download><?php echo $manual->descricao; ?></a></center></p>
+								</div>
+					<?php			
+						}
+					}
+					else{
+						echo "<p>Não existem manuais cadastrados.</p>";
+					}
+					?>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="headingFour">
+				<h4 class="panel-title">
+					<a class="collapsed subtitle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+						Logotipos
+					</a>
+				</h4>
+			</div>
+			<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+				<div class="panel-body">
+					<?php 
+						if(count($logotipos) > 0){
+							foreach($logotipos as $logotipo){
+					?>			
+								<div class="col-sm-2 col-md-2 col-xs-2">
+									<img src="/documentos/capa/<?php echo $logotipo->capa; ?>" alt="" width="100%;">
+									<p><center><a href="/documentos/arquivo/<?php echo $logotipo->arquivo; ?>" download><?php echo $logotipo->descricao; ?></a></center></p>
+								</div>
+					<?php			
+						}
+					}
+					else{
+						echo "<p>Não existem logotipos cadastrados.</p>";
+					}
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
