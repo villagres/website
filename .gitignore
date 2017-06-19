@@ -21,12 +21,11 @@ extras/documentation
 
 # Public
 public/administracao/mkt
-public/documentos
-public/idealize
+public/documentos/arquivo
 public/img
-#public/idealize/public/img/categoria
-#public/idealize/public/img/premiacao
-#public/idealize/public/img/regulamento
+public/idealize/public/img/categoria
+public/idealize/public/img/premiacao
+public/idealize/public/img/regulamento
 #public/img/banner
 #public/img/banner_principal
 #public/img/chamada
