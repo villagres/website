@@ -80,6 +80,7 @@
 			header('Cache-Control: max-age=0');
 
 			$writer = \PHPExcel_IOFactory::createWriter($ea, 'Excel2007');            			
+			ob_end_clean();
 			$writer->save('php://output');
 			return new ViewModel();
 		}
@@ -127,6 +128,7 @@
 			header('Cache-Control: max-age=0');
 
 			$writer = \PHPExcel_IOFactory::createWriter($ea, 'Excel2007');            			
+			ob_end_clean();
 			$writer->save('php://output');
 			return new ViewModel();
 		}

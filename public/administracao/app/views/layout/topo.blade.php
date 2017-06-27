@@ -1,4 +1,3 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/fckeditor/fckeditor.php');?>
 <div class="row">
 	<div class="col-md-12">
 		<nav class="navbar navbar-static-top topo">

@@ -39,24 +39,48 @@
 					<div class="row">
 						<div class="col-md-2"><span>Texto</span></div>
 						<div class="col-md-10">
+							<textarea name="informacoes" id="informacoes" rows="10" cols="80">
+								<?php echo $texto['texto']; ?>
+				            </textarea>
+				            <script>
+				                $(function(){
+								   CKEDITOR.replace( 'informacoes',{filebrowserBrowseUrl:roxyFileman,
+								                                filebrowserImageBrowseUrl:roxyFileman+'?type=image',
+								                                removeDialogTabs: 'link:upload;image:upload'}); 
+								});
+				            </script>
 							<?php 
+								/*
 								$oFCKeditor = new FCKeditor('informacoes');						
 								$oFCKeditor->BasePath = "/fckeditor/";		
 								$oFCKeditor->Value = $texto['texto'];
 								$oFCKeditor->Height = '300';
 								echo $oFCKeditor->CreateHtml();
+								*/
 							?>								
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-2"><span>Texto Ingles</span></div>
 						<div class="col-md-10">
+							<textarea name="informacoes_en" id="informacoes_en" rows="10" cols="80">                
+								<?php echo $texto['texto_en']; ?>
+				            </textarea>
+				            <script>
+				                $(function(){
+								   CKEDITOR.replace( 'informacoes_en',{filebrowserBrowseUrl:roxyFileman,
+								                                filebrowserImageBrowseUrl:roxyFileman+'?type=image',
+								                                removeDialogTabs: 'link:upload;image:upload'}); 
+								});
+				            </script>
 							<?php 
+								/*
 								$oFCKeditor = new FCKeditor('informacoes_en');						
 								$oFCKeditor->BasePath = "/fckeditor/";		
 								$oFCKeditor->Value = $texto['texto_en'];
 								$oFCKeditor->Height = '300';
 								echo $oFCKeditor->CreateHtml();
+								*/
 							?>								
 						</div>
 					</div>
