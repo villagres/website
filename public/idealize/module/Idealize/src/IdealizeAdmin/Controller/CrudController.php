@@ -55,7 +55,7 @@
 			$ews->setCellValue('h1', 'Início participação');
 			$ews->setCellValue('i1', 'Fim participação');
 
-			$ea->getActiveSheet()->getStyle('a1:h1')->getFont()->setBold(true);
+			$ea->getActiveSheet()->getStyle('a1:i1')->getFont()->setBold(true);
 
 			foreach($resultado as $result){
 				$ews->setCellValue('a'.$row, $result['id']);
@@ -75,13 +75,19 @@
     			$ea->getActiveSheet()->getColumnDimension($columnID)->setAutoSize(true);
 			}
 
-			header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-			header('Content-Disposition: attachment;filename="completo.xlsx"');
-			header('Cache-Control: max-age=0');
+			header('Content-Type: application/vnd.ms-excel');
+			header('Content-Disposition: attachment;filename="completo.xls"');
+			header('Cache-Control: max-age=0');			
 
-			$writer = \PHPExcel_IOFactory::createWriter($ea, 'Excel2007');            			
+			$writer = \PHPExcel_IOFactory::createWriter($ea, 'Excel5');			
+
 			ob_end_clean();
+        	ob_start();
+
 			$writer->save('php://output');
+
+			ob_flush();
+
 			return new ViewModel();
 		}
 
@@ -123,13 +129,19 @@
     			$ea->getActiveSheet()->getColumnDimension($columnID)->setAutoSize(true);
 			}
 
-			header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-			header('Content-Disposition: attachment;filename="pontos.xlsx"');
+			header('Content-Type: application/vnd.ms-excel');
+			header('Content-Disposition: attachment;filename="pontos.xls"');
 			header('Cache-Control: max-age=0');
 
-			$writer = \PHPExcel_IOFactory::createWriter($ea, 'Excel2007');            			
+			$writer = \PHPExcel_IOFactory::createWriter($ea, 'Excel5');            			
+
 			ob_end_clean();
+        	ob_start();
+
 			$writer->save('php://output');
+
+			ob_flush();
+
 			return new ViewModel();
 		}
 
