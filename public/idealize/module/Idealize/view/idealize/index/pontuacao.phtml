@@ -13,9 +13,11 @@
 		$trintat = $dado['trintat'];
 		$trintaeum = $dado['trintaeum'];
 		$sessentaetres = $dado['sessentaetres'];
+		$bonusaniversario = $dado['bonusaniversario'];
+		$enviofotoambiente = $dado['enviofotoambiente'];
 		$datacadastro = $dado['data'];
 		$dataparticipacao = $dado['data2'];
-		$total = $sessenta + $cinquenta + $vinteequatro + $vinteequatrot + $setentaeum + $vinteecinco + $trinta + $sessentaedoist + $setentaeumt + $quarentaenovet + $trintat + $trintaeum + $sessentaetres;
+		$total = $sessenta + $cinquenta + $vinteequatro + $vinteequatrot + $setentaeum + $vinteecinco + $trinta + $sessentaedoist + $setentaeumt + $quarentaenovet + $trintat + $trintaeum + $sessentaetres + $bonusaniversario + $enviofotoambiente;
 	}
 	if(!empty($dataparticipacao)){
 		$data = $dataparticipacao;
@@ -103,6 +105,14 @@
 				<td class="rotuloSaldo">71x71</td>
 				<td class="pontosSaldo"><?php if($setentaeum != ''){echo $setentaeum;}else{echo "0";} ?> pontos</td>
 				<td></td>
+			</tr>
+			<tr>
+				<td class="rotuloSaldo">BÔNUS DE ANIVERSÁRIO</td>
+				<td class="pontoSaldo"><?php if($bonusaniversario != ''){echo $bonusaniversario;}else{echo "0";} ?>pontos</td>
+			</tr>
+			<tr>
+				<td class="rotuloSaldo">ENVIO DE FOTO DE AMBIENTE</td>
+				<td class="pontoSaldo"><?php if($enviofotoambiente != ''){echo $enviofotoambiente;}else{echo "0";} ?>pontos</td>
 			</tr>
 		</table>
 	</div>			

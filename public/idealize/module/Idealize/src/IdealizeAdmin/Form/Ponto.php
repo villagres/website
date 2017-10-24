@@ -45,7 +45,9 @@
 						'62x107(Touch)' => '62x107(Touch)',
 						'63x108' => '63x108',
 						'71x71(Touch)' => '71x71(Touch)',
-					 	'71x71' => '71x71'
+						'71x71' => '71x71',
+						'BÔNUS DE ANIVERSÁRIO' => 'BÔNUS DE ANIVERSÁRIO',
+						'ENVIO DE FOTO DE AMBIENTE' => 'ENVIO DE FOTO DE AMBIENTE'
 					 ));
 			$this->add($formatos);
 
