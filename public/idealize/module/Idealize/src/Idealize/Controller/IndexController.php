@@ -109,7 +109,7 @@ class IndexController extends AbstractActionController
 					  (select sum(o.pontos) from Idealize\Entity\Ponto o where o.idPessoa = a.id and o.formato = '31x108') as trintaeum,
 					  (select sum(p.pontos) from Idealize\Entity\Ponto p where p.idPessoa = a.id and p.formato = '63x108') as sessentaetres,
             (select sum(f.pontos) from Idealize\Entity\Ponto f where f.idPessoa = a.id and f.formato = 'BÔNUS DE ANIVERSÁRIO') as bonusaniversario,
-            (select sum(g.pontos) from Idealize\Entity\Ponto g where g.idPessoa = a.id and g.formato = 'ENVIO DE FOTO DE AMBIENTE') as enviofotoambiente
+            (select sum(g.pontos) from Idealize\Entity\Ponto g where g.idPessoa = a.id and g.formato = 'ENVIO DE FOTO DE AMBIENTE') as enviofotoambiente,
                       (a.dtCadastro) as data,
 					  (a.dtInicioParticipacao) as data2
                       FROM Idealize\Entity\Pessoa a                      
