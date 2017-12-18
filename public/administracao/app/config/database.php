@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'db_villagres',
 			'username'  => 'usr_villagres',
-			'password'  => 'villa@123',
+			'password'  => 'Ch5!w8juF=Uk',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
